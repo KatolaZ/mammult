@@ -121,6 +121,7 @@
 \begin{document}
 
 \maketitle
+\tableofcontents
 
 \chapter{Structural descriptors}
 
@@ -142,6 +143,8 @@ normalised Hamming distance, node degree vectors.
 \input{./latex/structure/activity/degs_to_binary.tex}
 \input{./latex/structure/activity/degs_to_activity_overlap.tex}
 
+\clearpage
+
 \subsection{Layer aggregation}
 
 This section includes programs to obtain various single-layer
@@ -149,6 +152,7 @@ aggregated graphs associated to a multiplex network.
 
 \input{./latex/structure/metrics/aggregate_layers_w.tex}
 \input{./latex/structure/metrics/intersect_layers.tex}
+\clearpage
 
 \subsection{Node degree, participation coefficient, cartography}
 
@@ -160,6 +164,7 @@ diagram of a multiplex.
 \input{./latex/structure/metrics/cartography_from_layers.tex}
 \input{./latex/structure/metrics/cartography_from_deg_vectors.tex}
 \input{./latex/structure/metrics/cartography_from_columns.tex}
+\clearpage
 
 \subsection{Edge overlap, reinforcement}
 This section includes programs to compute the egde overlap and to
@@ -168,6 +173,7 @@ evaulate the edge reinforcement effect.
 \input{./latex/structure/metrics/edge_overlap.tex}
 \input{./latex/structure/metrics/avg_edge_overlap.tex}
 \input{./latex/structure/reinforcement/reinforcement.tex}
+\clearpage
 
 \section{Inter-layer degree correlations}
 
@@ -180,6 +186,7 @@ degree at different layers.
 \input{./latex/structure/correlations/rank_nodes.tex}
 \input{./latex/structure/correlations/rank_nodes_thresh.tex}
 \input{./latex/structure/correlations/rank_occurrence.tex}
+\clearpage
 
 \subsection{Interlayer degree correlation coefficients}
 
@@ -189,6 +196,7 @@ inter-layer degree correlation coefficients.
 \input{./latex/structure/correlations/compute_pearson.tex}
 \input{./latex/structure/correlations/compute_rho.tex}
 \input{./latex/structure/correlations/compute_tau.tex}
+\clearpage
 
 
 \subsection{Interlayer degree correlation functions}
@@ -204,6 +212,7 @@ power-law.
 \input{./latex/structure/correlations/knn_q_from_degrees.tex}
 %% \input{./latex/structure/correlations/knn_q_from_degrees_log.tex}
 \input{./latex/structure/correlations/fit_knn.tex}
+\clearpage
 
 \chapter{Models of multi-layer networks}
 
@@ -215,6 +224,7 @@ power-law.
 \input{./latex/models/nullmodels/model_MDM.tex}
 \input{./latex/models/nullmodels/model_MSM.tex}
 \input{./latex/models/nullmodels/model_layer_growth.tex}
+\clearpage
 
 
 \section{Growing multiplex networks}
@@ -226,15 +236,18 @@ power-law.
 \input{./latex/models/growth/nibilab_linear_delay_mix.tex}
 \input{./latex/models/growth/nibilab_linear_random_times.tex}
 %%\input{./latex/models/growth/nibilab_semilinear.tex}
+\clearpage
 
 \subsection{Non-linear preferential attachment}
 
 \input{./latex/models/growth/nibilab_nonlinear.tex}
+\clearpage
 
 
 \subsection{Utilities}
 
 \input{./latex/models/growth/node_deg_over_time.tex}
+\clearpage
 
 \section{Multiplex networks with inter-layer degree correlations}
 
@@ -242,6 +255,7 @@ power-law.
 
 \input{./latex/models/correlations/tune_rho.tex}
 \input{./latex/models/correlations/tune_qnn_adaptive.tex}
+\clearpage
 
 
 \chapter{Dynamics on multi-layer networks}
@@ -249,17 +263,20 @@ power-law.
 \section{Interacting opinions - Multilayer ising model}
 
 \input{./latex/dynamics/Ising/multiplex_ising.tex}
+\clearpage
 
 \section{Biased random walks}
 
 \subsection{Stationary distribution}
 
 \input{./latex/dynamics/randomwalks/statdistr2.tex}
+\clearpage
 
 \subsection{Entropy rate}
 
 \input{./latex/dynamics/randomwalks/entropyrate2add.tex}
 \input{./latex/dynamics/randomwalks/entropyrate2mult.tex}
 \input{./latex/dynamics/randomwalks/entropyrate2int.tex}
+\clearpage
 
 \end{document}
