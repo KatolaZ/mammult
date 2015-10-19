@@ -1,0 +1,18 @@
+\myprogram{{rank\_nodes\_thresh.py}}
+          {rank the nodes of a layer whose value of a given structural
+          descriptor is above a threshold.}  {$<$prop\_file$>$ $<$thresh$>$}
+
+\mydescription{Get a file as input, whose n-th line corresponds to the value of a
+ certain property of the n-th node, and rank the nodes according to
+ that property, taking into account ranking ties properly. The rank of
+ all the nodes whose value of the structural descriptor is smaller
+ than the threshold \textit{thresh} specified as second parameter is
+ set to \textbf{0} (ZERO). }
+
+\myreturn{The program prints on \texttt{stdout} a list of lines, where
+ the n-th line contains the rank of the n-th node corresponding to the
+ values of the structural descriptor provided in the input file, or
+ zero if such desxriptor is below the specified
+ threshold \textit{thresh}.}
+
+\myreference{\refcorrelations}

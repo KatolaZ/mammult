@@ -1,0 +1,33 @@
+\myprogram{{model\_hypergeometric.py}}
+          {Hypergeometric node activity null model.} 
+          {$<$layer\_N\_file$>$ $<$N$>$}
+
+\mydescription{This is the hypergeometric model of node activation. In
+          this model each layer has exactly the same number of active
+          node of a reference multiplex network, but nodes on each
+          layer are activated uniformly at random, thus destroying all
+          inter-layer activity correlation patterns.
+
+          The file \textit{layer\_N\_file} reports on the n-th line
+          the number of active nodes on the n-th layer (starting from
+          zero). The second parameter \textit{N} is the total number
+          of active nodes in the multiplex.
+ }
+
+
+\myreturn{The program prints on \texttt{stdout} a node-layer list of lines in the
+ format:
+
+ \hspace{0.5cm} \textit{node\_i layer\_i}
+ 
+ where \textit{node\_i} is the ID of a node and \textit{layre\_i} is
+ the ID of a layer. This list indicates which nodes are active in
+ which layer. For instance, the line:
+
+ \hspace{0.5cm} \textit{24 3}
+
+ indicates that the node with ID \textit{24} is active on
+ layer \textit{3}.
+}
+
+\myreference{\refcorrelations}

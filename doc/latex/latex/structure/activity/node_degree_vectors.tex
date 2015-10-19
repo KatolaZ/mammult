@@ -1,0 +1,30 @@
+\myprogram{{node\_degree\_vectors.py}}
+          {compute the degree vectors of all the nodes of a multiplex network}
+          {$<$layer1$>$ [$<$layer2$>$ ...]}
+
+\mydescription{Compute and print on output the degree vectors of all
+          the nodes of a multiplex network, whose layers are given as
+  input in the files \textit{layer1}, \textit{layer2}, etc.
+  
+  Each file contains the (undirected) edge list of a layer, and each
+  line is in the format:
+  
+  \hspace{0.5cm}\textit{src\_ID} \textit{dest\_ID}
+  
+  where \textit{src\_ID} and \textit{dest\_ID} are the IDs of the two
+  endpoints of an edge.}
+
+\myreturn{A list of lines, where the n-th line is the 
+  vector of degrees of the n-th node, in the format:
+  
+  \hspace{0.5cm}\textit{noden\_deg\_lay1 noden\_deg\_lay2 ... noden\_deg\_layM}
+
+  \noindent As usual, node IDs start from zero and proceed
+  sequentially, without gaps, i.e., if a node ID is not present in any
+  of the layer files given as input, the program considers it as being
+  isolated on all the layers.
+
+}
+
+\myreference{\refgrowth\\ \\ \indent \refmetrics}
+

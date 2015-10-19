@@ -1,0 +1,265 @@
+\documentclass[a4paper,11pt]{book}
+
+\usepackage[british]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{hyperref}
+\usepackage{amsmath, amssymb}
+
+\newcommand{\lay}[1]{^{[#1]}}
+\newcommand{\avg}[1]{\langle #1 \rangle}
+
+
+\newcommand{\myprogram}[3]{\subsubsection{\texttt{#1}}
+  \textbf{NAME}
+    
+  {\textbf{#1} - #2}
+    
+  \vspace{0.5cm}
+  \noindent
+  \textbf{SYNOPSYS}
+  
+  {\textbf{#1} { }\texttt{\textit{#3} } }
+}
+
+\newcommand{\mydescription}[1]{
+  \vspace{0.5cm}
+  \noindent
+  \textbf{DESCRIPTION}
+
+  {#1}
+}
+
+\newcommand{\myreturn}[1]{
+  \vspace{0.5cm}
+  \noindent
+  \textbf{OUTPUT}
+
+  {#1}
+}
+
+
+\newcommand{\myreference}[1]{
+  \vspace{0.5cm}
+  \noindent
+  \textbf{REFERENCE}
+
+  {#1}
+}
+
+%%
+%% REFERENCES
+%%
+
+\newcommand{\refgrowth}{V. Nicosia, G. Bianconi, V. Latora,
+  M. Barthelemy, ``Growing multiplex networks'',
+  \textit{Phys. Rev. Lett.} {\bf 111}, 058701 (2013).
+  
+  Link to paper: \url{http://prl.aps.org/abstract/PRL/v111/i5/e058701}
+}
+\newcommand{\refnonlinear}{V. Nicosia, G. Bianconi, V. Latora,
+  M. Barthelemy, ``Non-linear growth and condensation in multiplex
+  networks'', \textit{Phys. Rev. E} {\bf 90}, 042807 (2014).
+  
+  Link to paper: \url{http://journals.aps.org/pre/abstract/10.1103/PhysRevE.90.042807}
+}
+\newcommand{\refmetrics}{F. Battiston, V. Nicosia, V. Latora,
+  ``Structural measures for multiplex networks'',
+  \textit{Phys. Rev. E} {\bf 89}, 032804 (2014).
+  
+  Link to paper: \url{http://journals.aps.org/pre/abstract/10.1103/PhysRevE.89.032804}
+}
+\newcommand{\refcorrelations}{V. Nicosia, V. Latora, ``Measuring and
+  modeling correlations in multiplex networks'', \textit{Phys. Rev. E}
+  {\bf 92}, 032805 (2015).
+  
+  Link to paper: \url{http://journals.aps.org/pre/abstract/10.1103/PhysRevE.92.032805}}
+
+\newcommand{\refreducibility}{M. De Domenico, V. Nicosia, A. Arenas,
+  V. Latora, \textit{``Structural reducibility of multilayer
+    networks''}, Nat. Commun. {\bf 6}, 6864 (2015).
+  
+  Link to paper: \url{http://www.nature.com/ncomms/2015/150423/ncomms7864/full/ncomms7864.html}
+}
+\newcommand{\refvisibility}{L. Lacasa, V. Nicosia, V. Latora,
+  \textit{``Network structure of multivariate time series''}, accepted
+  for publication in Scientific Reports, arxiv:1408.0925 (2015).
+  
+  Link to paper: \url{http://arxiv.org/abs/1408.0925}
+}
+
+\newcommand{\refbiased}{F. Battiston, V. Nicosia, V. Latora,
+  \textit{``Biased random walks on multiplex networks''}, arxiv:1505.01378 (2015).
+  
+  Link to paper: \url{http://arxiv.org/abs/1505.01378}
+}
+\newcommand{\refising}{F. Battiston, A. Cairoli, V. Nicosia, A. Baule, V. Latora,
+  \textit{``Interplay between consensus and coherence in a model of interacting opinions''}, accepted
+  for publication in Physica D, arxiv:1506.04544 (2015).
+  
+  Link to paper: \url{http://arxiv.org/abs/1506.04544}
+}
+\newcommand{\refcommunity}{F. Battiston, J. Iacovacci, V. Nicosia, G. Bianconi, V. Latora,
+  \textit{``Emergence of multiplex communities in collaboration networks''}, arxiv:1506.01280 (2015).
+  
+  Link to paper: \url{http://arxiv.org/abs/1506.01280}
+}
+
+\newcommand{\refaxelrod}{F. Battiston, V. Nicosia, V. Latora, M. San Miguel,
+  \textit{``Layered social influence promotes multiculturality''}, in preparation (2015).
+  
+  %Link to paper: \url{http://arxiv.org/abs/inpreparation}
+}
+\newcommand{\refmotifs}{F. Battiston, M. Chavez, V. Nicosia, V. Latora,
+  \textit{``Multilayer motifs in brain networks''}, in preparation (2015).
+  
+  %Link to paper: \url{http://arxiv.org/abs/inpreparation}
+}
+
+\title{MAMMULT: Metrics And Models for MULTilayer networks}
+
+
+\begin{document}
+
+\maketitle
+
+\chapter{Structural descriptors}
+
+\section{Basic node, edge, and layer properties}
+
+\subsection{Node and layer activity}
+
+This section includes programs related to the computation of node and
+layer activity, activity vectors, pairwise multiplexity, pairwise
+normalised Hamming distance, node degree vectors.
+
+\input{./latex/structure/activity/node_activity.tex}
+\input{./latex/structure/activity/layer_activity.tex}
+\input{./latex/structure/activity/node_activity_vectors.tex}
+\input{./latex/structure/activity/layer_activity_vectors.tex}
+\input{./latex/structure/activity/multiplexity.tex}
+\input{./latex/structure/activity/hamming_dist.tex}
+\input{./latex/structure/activity/node_degree_vectors.tex}
+\input{./latex/structure/activity/degs_to_binary.tex}
+\input{./latex/structure/activity/degs_to_activity_overlap.tex}
+
+\subsection{Layer aggregation}
+
+This section includes programs to obtain various single-layer
+aggregated graphs associated to a multiplex network. 
+
+\input{./latex/structure/metrics/aggregate_layers_w.tex}
+\input{./latex/structure/metrics/intersect_layers.tex}
+
+\subsection{Node degree, participation coefficient, cartography}
+
+This section includes programs to compute the total degree and
+participation coefficient of each node, and to draw the cartography
+diagram of a multiplex.
+
+\input{./latex/structure/metrics/overlap_degree.tex}
+\input{./latex/structure/metrics/cartography_from_layers.tex}
+\input{./latex/structure/metrics/cartography_from_deg_vectors.tex}
+\input{./latex/structure/metrics/cartography_from_columns.tex}
+
+\subsection{Edge overlap, reinforcement}
+This section includes programs to compute the egde overlap and to
+evaulate the edge reinforcement effect. 
+
+\input{./latex/structure/metrics/edge_overlap.tex}
+\input{./latex/structure/metrics/avg_edge_overlap.tex}
+\input{./latex/structure/reinforcement/reinforcement.tex}
+
+\section{Inter-layer degree correlations}
+
+\subsection{Node ranking}
+
+This section includes various utilities to compute and compare node
+rankings induced by any generic structural node property, including
+degree at different layers.
+
+\input{./latex/structure/correlations/rank_nodes.tex}
+\input{./latex/structure/correlations/rank_nodes_thresh.tex}
+\input{./latex/structure/correlations/rank_occurrence.tex}
+
+\subsection{Interlayer degree correlation coefficients}
+
+This section includes programs for the computation of various
+inter-layer degree correlation coefficients.
+
+\input{./latex/structure/correlations/compute_pearson.tex}
+\input{./latex/structure/correlations/compute_rho.tex}
+\input{./latex/structure/correlations/compute_tau.tex}
+
+
+\subsection{Interlayer degree correlation functions}
+
+This section includes programs to compute intra-layer and inter-layer
+degree correlation functions, and to fit those functions with a
+power-law.
+
+
+\input{./latex/structure/correlations/dump_k_q.tex}
+\input{./latex/structure/correlations/knn_q_from_layers.tex}
+%% \input{./latex/structure/correlations/knn_q_from_layers_log.tex}
+\input{./latex/structure/correlations/knn_q_from_degrees.tex}
+%% \input{./latex/structure/correlations/knn_q_from_degrees_log.tex}
+\input{./latex/structure/correlations/fit_knn.tex}
+
+\chapter{Models of multi-layer networks}
+
+\section{Null models}
+
+\subsection{Null-models of node and layer activity}
+
+\input{./latex/models/nullmodels/model_hypergeometric.tex}
+\input{./latex/models/nullmodels/model_MDM.tex}
+\input{./latex/models/nullmodels/model_MSM.tex}
+\input{./latex/models/nullmodels/model_layer_growth.tex}
+
+
+\section{Growing multiplex networks}
+
+\subsection{Linear preferential attachment}
+
+\input{./latex/models/growth/nibilab_linear_delta.tex}
+\input{./latex/models/growth/nibilab_linear_delay.tex}
+\input{./latex/models/growth/nibilab_linear_delay_mix.tex}
+\input{./latex/models/growth/nibilab_linear_random_times.tex}
+%%\input{./latex/models/growth/nibilab_semilinear.tex}
+
+\subsection{Non-linear preferential attachment}
+
+\input{./latex/models/growth/nibilab_nonlinear.tex}
+
+
+\subsection{Utilities}
+
+\input{./latex/models/growth/node_deg_over_time.tex}
+
+\section{Multiplex networks with inter-layer degree correlations}
+
+\subsection{Models based on simulated annealing}
+
+\input{./latex/models/correlations/tune_rho.tex}
+\input{./latex/models/correlations/tune_qnn_adaptive.tex}
+
+
+\chapter{Dynamics on multi-layer networks}
+
+\section{Interacting opinions - Multilayer ising model}
+
+\input{./latex/dynamics/Ising/multiplex_ising.tex}
+
+\section{Biased random walks}
+
+\subsection{Stationary distribution}
+
+\input{./latex/dynamics/randomwalks/statdistr2.tex}
+
+\subsection{Entropy rate}
+
+\input{./latex/dynamics/randomwalks/entropyrate2add.tex}
+\input{./latex/dynamics/randomwalks/entropyrate2mult.tex}
+\input{./latex/dynamics/randomwalks/entropyrate2int.tex}
+
+\end{document}

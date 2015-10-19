@@ -1,0 +1,24 @@
+%%%
+%%% Layer activity
+%%%
+
+\myprogram{{entropyrate2mult}}
+          {compute the entropy rate of multiplicative biased walks in a multiplex with $2$ layers.}
+          {$<$layer1$>$ $<$layer2$>$ $<overlapping network>$ $<$N$>$ $b_1$ $b_2$}
+
+\mydescription{Compute and print the entropy rate of a multiplicative biased walk in a multiplex with $2$ layers and bias parameters $b_1$ and $b_2$.
+  Files \textit{layer1}, \textit{layer2}, contain the (undirected) edge list of the two layer, and each
+  line is in the format:
+  
+  \hspace{0.5cm}\textit{src\_ID} \textit{dest\_ID}
+  
+  where \textit{src\_ID} and \textit{dest\_ID} are the IDs of the two
+  endpoints of an edge.
+
+  The file \textit{overlapping network} has also a third column indicating the number of times two nodes are connected across all layers.
+
+ $N$ is the number of nodes, $b_1$ is the degree-biased exponent for layer $1$, $b_2$ is the degree-biased exponent for layer $2$.} 
+
+\myreturn{One line, reporting the value of the entropy rate $h$ of an multiplicative biased random walks with $b_1$ and $b_2$ as bias exponents, $b_1$ and $b_2$.}
+
+\myreference{\refbiased}

@@ -1,0 +1,30 @@
+\myprogram{{aggregate\_layers\_w.py}}
+          {compute the (weighted) aggregated graph associated to a
+          multiplex.}  {$<$layer1$>$ $<$layer2$>$ [$<$layer3$>$...]}
+
+\mydescription{Compute and print on output the edge list of the  
+               weighted aggregated graph associated to the multiplex
+               network given on input. An edge is present in the
+               aggregated graph if it exists in at least one of the M
+               layers of the multiplex.
+
+  Each input file contains the (undirected) edge list of a layer, and
+  each line is in the format:
+  
+  \hspace{0.5cm}\textit{src\_ID} \textit{dest\_ID}
+  
+  where \textit{src\_ID} and \textit{dest\_ID} are the IDs of the two
+  endpoints of an edge.}
+
+\myreturn{The program prints on \texttt{stdout} the edge list of the
+  aggregated graph associated to the multiplex network. The edge list
+  is a list of lines in the format:
+   
+
+  \hspace{0.5cm} \textit{ID1 ID2 weight}
+
+  \noindent where \textit{ID1} and \textit{ID2} are the IDs of the two
+  nodes and \textit{weight} is the number of layers in which an edge
+  between \textit{ID1} and \textit{ID2} exists.}
+
+\myreference{\refcorrelations}

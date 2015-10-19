@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>2.2.1.0 nibilab_linear_delay_mix</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,index=2,3,4,5,next --> 
+<meta name="src" content="mammult_doc.tex"> 
+<meta name="date" content="2015-10-19 16:26:00"> 
+<link rel="stylesheet" type="text/css" href="mammult_doc.css"> 
+</head><body 
+>
+   <!--l. 5--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docsu45.html" >next</a>] [<a 
+href="mammult_docsu43.html" >prev</a>] [<a 
+href="mammult_docsu43.html#tailmammult_docsu43.html" >prev-tail</a>] [<a 
+href="#tailmammult_docsu44.html">tail</a>] [<a 
+href="mammult_docsu41.html#mammult_docsu44.html" >up</a>] </p></div>
+   <h5 class="subsubsectionHead"><a 
+ id="x51-500002.2.1"></a><span 
+class="cmtt-10x-x-109">nibilab</span><span 
+class="cmtt-10x-x-109">_linear</span><span 
+class="cmtt-10x-x-109">_delay</span><span 
+class="cmtt-10x-x-109">_mix</span></h5>
+<!--l. 5--><p class="noindent" ><span 
+class="cmbx-10x-x-109">NAME</span>
+<!--l. 5--><p class="indent" >   <span 
+class="cmbx-10x-x-109">nibilab</span><span 
+class="cmbx-10x-x-109">_linear</span><span 
+class="cmbx-10x-x-109">_delay</span><span 
+class="cmbx-10x-x-109">_mix </span>- Multiplex linear preferential attachment model
+&#8211; Asynchronous arrival and randomly selected first layer.
+<!--l. 5--><p class="noindent" ><span 
+class="cmbx-10x-x-109">SYNOPSYS</span>
+<!--l. 5--><p class="indent" >   <span 
+class="cmbx-10x-x-109">nibilab</span><span 
+class="cmbx-10x-x-109">_linear</span><span 
+class="cmbx-10x-x-109">_delay</span><span 
+class="cmbx-10x-x-109">_mix  </span><span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">N</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">m</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">m0</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">outfile</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">a</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">b</span><span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">c</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">d</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">beta</span><span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<!--l. 55--><p class="noindent" ><span 
+class="cmbx-10x-x-109">DESCRIPTION</span>
+<!--l. 55--><p class="indent" >   Grow a two-layer multiplex network using the multiplex linear preferential
+attachment model by Nicosia, Bianconi, Latora, Barthelemy (NiBiLaB).
+<!--l. 55--><p class="indent" >   The probability for a newly arrived node <span 
+class="cmmi-10x-x-109">i </span>to create a link to node <span 
+class="cmmi-10x-x-109">j </span>on layer
+1 is:
+   <table 
+class="equation-star"><tr><td>
+   <center class="math-display" >
+<img 
+src="mammult_doc18x.png" alt="  1       [1]    [2]
+&Pi; i&rarr;j &prop;  akj + bkj
+" class="math-display" ></center></td></tr></table>
+<!--l. 55--><p class="nopar" >
+<!--l. 55--><p class="indent" >   and the dual probability for <span 
+class="cmmi-10x-x-109">i </span>to create a link to <span 
+class="cmmi-10x-x-109">j </span>on layer 2 is:
+   <table 
+class="equation-star"><tr><td>
+   <center class="math-display" >
+<img 
+src="mammult_doc19x.png" alt="  2       [1]    [2]
+&Pi; i&rarr;j &prop;  ck j + dkj
+" class="math-display" ></center></td></tr></table>
+<!--l. 55--><p class="nopar" >
+<!--l. 55--><p class="indent" >   Each new node arrives on one of the two layers, chosen uniformly at random,
+and its replica on the other layer appears after a time delay <span 
+class="cmmi-10x-x-109">&tau; </span>sampled from the
+power-law function:
+   <table 
+class="equation-star"><tr><td>
+   <center class="math-display" >
+<img 
+src="mammult_doc20x.png" alt="        &minus;&beta;
+P(&tau;) &sim; &tau;
+" class="math-display" ></center></td></tr></table>
+<!--l. 55--><p class="nopar" >
+<!--l. 55--><p class="indent" >   The (mandatory) parameters are as follows:
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmbx-10x-x-109">N </span>number of nodes in the final graph
+     </li>
+     <li class="itemize"><span 
+class="cmbx-10x-x-109">m </span>number of new edges brought by each new node
+     </li>
+     <li class="itemize"><span 
+class="cmbx-10x-x-109">m0 </span>number of nodes in the initial seed graph. <span 
+class="cmti-10x-x-109">m0 </span>must be larger than
+     of equal to <span 
+class="cmti-10x-x-109">m</span>.
+     </li>
+     <li class="itemize"><span 
+class="cmbx-10x-x-109">outfile </span>the name of the file which will contain the
+     </li>
+     <li class="itemize"><span 
+class="cmbx-10x-x-109">a,b,c,d </span>the coefficients of the attaching probability function
+     </li>
+     <li class="itemize"><span 
+class="cmbx-10x-x-109">beta </span>the exponent of the power-law delay function which determines
+     the arrival of replicas on layer 2
+     </li></ul>
+                                                                     
+
+                                                                     
+<!--l. 66--><p class="noindent" ><span 
+class="cmbx-10x-x-109">OUTPUT</span>
+<!--l. 66--><p class="indent" >   The program dumps on the file <span 
+class="cmtt-10x-x-109">outfile </span>the (undirected) edge list of the
+resulting network. Each line of the file is in the format:
+<!--l. 66--><p class="indent" >   &#x00A0;    <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID dest</span><span 
+class="cmti-10x-x-109">_ID</span>
+<!--l. 66--><p class="indent" >   where <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID </span>and <span 
+class="cmti-10x-x-109">dest</span><span 
+class="cmti-10x-x-109">_ID </span>are the IDs of the two endpoints of an
+edge.
+<!--l. 68--><p class="noindent" ><span 
+class="cmbx-10x-x-109">REFERENCE</span>
+<!--l. 68--><p class="indent" >   V. Nicosia, G. Bianconi, V. Latora, M. Barthelemy, &#8220;Growing multiplex
+networks&#8221;, <span 
+class="cmti-10x-x-109">Phys. Rev. Lett. </span><span 
+class="cmbx-10x-x-109">111</span>, 058701 (2013).
+<!--l. 68--><p class="indent" >   Link to paper: <a 
+href="http://prl.aps.org/abstract/PRL/v111/i5/e058701" class="url" ><span 
+class="cmtt-10x-x-109">http://prl.aps.org/abstract/PRL/v111/i5/e058701</span></a>
+                                                                     
+
+                                                                     
+   <!--l. 6--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docsu45.html" >next</a>] [<a 
+href="mammult_docsu43.html" >prev</a>] [<a 
+href="mammult_docsu43.html#tailmammult_docsu43.html" >prev-tail</a>] [<a 
+href="mammult_docsu44.html" >front</a>] [<a 
+href="mammult_docsu41.html#mammult_docsu44.html" >up</a>] </p></div>
+<!--l. 6--><p class="indent" >   <a 
+ id="tailmammult_docsu44.html"></a>  
+</body></html> 

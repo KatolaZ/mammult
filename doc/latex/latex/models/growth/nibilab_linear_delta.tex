@@ -1,0 +1,57 @@
+\myprogram{{nibilab\_linear\_delta}}
+          {Multiplex linear preferential attachment model --
+          Synchronous arrival.}  
+          {$<$N$>$ $<$m$>$ $<$m0$>$ $<$outfile$>$ $<$a$>$ $<$b$>$ $<$c$>$ $<$d$>$}
+
+\mydescription{Grow a two-layer multiplex network using the multiplex linear
+          preferential attachment model by Nicosia, Bianconi, Latora,
+          Barthelemy (NiBiLaB).
+
+          The probability for a newly arrived node $i$ to create a
+          link to node $j$ on layer $1$ is:
+          
+          \begin{equation*}
+          \Pi_{i\to j}^{1} \propto ak\lay{1}_j + bk\lay{2}_j
+          \end{equation*}
+
+          and the dual probability for $i$ to create a link to $j$ on
+          layer $2$ is:
+
+          \begin{equation*}
+          \Pi_{i\to j}^{2} \propto ck\lay{1}_j + dk\lay{2}_j
+          \end{equation*}
+          
+          Each new node arrives at the same time on both layers.
+
+          The (mandatory) parameters are as follows:
+
+          \begin{itemize}
+
+          \item \textbf{N} number of nodes in the final graph
+
+          \item \textbf{m} number of new edges brought by each new node
+
+          \item \textbf{m0} number of nodes in the initial seed
+                    graph. \textit{m0} must be larger than of equal
+                    to \textit{m}.
+
+          \item \textbf{outfile} the name of the file which will contain the            
+          
+          \item \textbf{a,b,c,d} the coefficients of the attaching probability
+          function
+
+          \end{itemize}
+ }
+
+
+\myreturn{The program dumps on the file \texttt{outfile} the
+ (undirected) edge list of the resulting network. Each line of the
+ file is in the format:
+  
+  \hspace{0.5cm}\textit{src\_ID} \textit{dest\_ID}
+  
+  where \textit{src\_ID} and \textit{dest\_ID} are the IDs of the two
+  endpoints of an edge.
+}
+
+\myreference{\refgrowth}

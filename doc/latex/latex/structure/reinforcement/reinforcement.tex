@@ -1,0 +1,21 @@
+%%%
+%%% Layer activity
+%%%
+
+\myprogram{{reinforcement.py}}
+          {compute the probability to have a link between two nodes in layer $1$ given their weight in layer $2$.}
+          {$<$layer1$>$ $<$layer2$>$ $<N_{bins}>$ $<min_{value}>$ $<max_{value}>$}
+
+\mydescription{Compute and print on output the probability to have a link between two nodes in layer $1$ given their weight in layer $2$. 
+As input are given the files \textit{layer1}, \textit{layer2}, the number of bins for the link weights of the second layer, the minimum and the maximum values of the binning.
+  
+  The first file contains the binary edge list of layer $1$, the second file contains the weighted edge list of layer $2$. each
+  line is in the format:
+  
+  \hspace{0.5cm}\textit{bin\_min} \textit{bin\_max} \textit{freq}
+  
+  where \textit{bin\_min} and \textit{bin\_max} are the minimum and maximum values of the link weights of layer $2$ in that binning, and  \textit{freq} is the probability to have a link on layer $1$ given such weight in layer $2$.}
+
+\myreturn{A list of lines, where the n-th line is the minimum and maximum values of the weight of the links in layer $2$ in the n-th bin, and the frequency to have a link on layer $2$ given that weight.}
+
+\myreference{\refmetrics}

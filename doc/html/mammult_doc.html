@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>MAMMULT: Metrics And Models for MULTilayer networks</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,index=2,3,4,5,next --> 
+<meta name="src" content="mammult_doc.tex"> 
+<meta name="date" content="2015-10-19 16:26:00"> 
+<link rel="stylesheet" type="text/css" href="mammult_doc.css"> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                     
+
+                                                                     
+                                                                     
+
+                                                                     
+                                                                     
+
+                                                                     
+
+<h2 class="titleHead">MAMMULT: Metrics And Models for MULTilayer
+networks</h2>
+<div class="author" ></div><br />
+<div class="date" ><span 
+class="cmr-12">19th</span><span 
+class="cmr-12">&#x00A0;October 2015</span></div>
+                                                                     
+
+                                                                     
+   </div>
+                                                                     
+
+                                                                     
+   <div class="tableofcontents">
+   <span class="chapterToc" >1 <a 
+href="mammult_docch1.html#x2-10001" id="QQ2-2-1">Structural descriptors</a></span>
+<br />   &#x00A0;<span class="sectionToc" >1.1 <a 
+href="mammult_docse1.html#x3-20001.1" id="QQ2-3-2">Basic node, edge, and layer properties</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >1.1.1 <a 
+href="mammult_docsu1.html#x4-30001.1.1" id="QQ2-4-3">Node and layer activity</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu2.html#x5-40001.1.1" id="QQ2-5-4"><span 
+class="cmtt-10x-x-109">node</span><span 
+class="cmtt-10x-x-109">_activity.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu3.html#x6-50001.1.1" id="QQ2-6-5"><span 
+class="cmtt-10x-x-109">layer</span><span 
+class="cmtt-10x-x-109">_activity.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu4.html#x7-60001.1.1" id="QQ2-7-6"><span 
+class="cmtt-10x-x-109">node</span><span 
+class="cmtt-10x-x-109">_activity</span><span 
+class="cmtt-10x-x-109">_vectors.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu5.html#x8-70001.1.1" id="QQ2-8-7"><span 
+class="cmtt-10x-x-109">layer</span><span 
+class="cmtt-10x-x-109">_activity</span><span 
+class="cmtt-10x-x-109">_vectors.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu6.html#x9-80001.1.1" id="QQ2-9-8"><span 
+class="cmtt-10x-x-109">multiplexity.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu7.html#x10-90001.1.1" id="QQ2-10-9"><span 
+class="cmtt-10x-x-109">hamming</span><span 
+class="cmtt-10x-x-109">_dist.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu8.html#x11-100001.1.1" id="QQ2-11-10"><span 
+class="cmtt-10x-x-109">node</span><span 
+class="cmtt-10x-x-109">_degree</span><span 
+class="cmtt-10x-x-109">_vectors.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu9.html#x12-110001.1.1" id="QQ2-12-11"><span 
+class="cmtt-10x-x-109">degs</span><span 
+class="cmtt-10x-x-109">_to</span><span 
+class="cmtt-10x-x-109">_binary.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu10.html#x13-120001.1.1" id="QQ2-13-12"><span 
+class="cmtt-10x-x-109">degs</span><span 
+class="cmtt-10x-x-109">_to</span><span 
+class="cmtt-10x-x-109">_activity</span><span 
+class="cmtt-10x-x-109">_overlap.py</span></a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >1.1.2 <a 
+href="mammult_docsu11.html#x14-130001.1.2" id="QQ2-14-13">Layer aggregation</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu12.html#x15-140001.1.2" id="QQ2-15-14"><span 
+class="cmtt-10x-x-109">aggregate</span><span 
+class="cmtt-10x-x-109">_layers</span><span 
+class="cmtt-10x-x-109">_w.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu13.html#x16-150001.1.2" id="QQ2-16-15"><span 
+class="cmtt-10x-x-109">intersect</span><span 
+class="cmtt-10x-x-109">_layers.py</span></a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >1.1.3 <a 
+href="mammult_docsu14.html#x17-160001.1.3" id="QQ2-17-16">Node degree, participation coefficient, cartography</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu15.html#x18-170001.1.3" id="QQ2-18-17"><span 
+class="cmtt-10x-x-109">overlap</span><span 
+class="cmtt-10x-x-109">_degree.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu16.html#x19-180001.1.3" id="QQ2-19-18"><span 
+class="cmtt-10x-x-109">cartography</span><span 
+class="cmtt-10x-x-109">_from</span><span 
+class="cmtt-10x-x-109">_layers.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu17.html#x20-190001.1.3" id="QQ2-20-19"><span 
+class="cmtt-10x-x-109">cartography</span><span 
+class="cmtt-10x-x-109">_from</span><span 
+class="cmtt-10x-x-109">_deg</span><span 
+class="cmtt-10x-x-109">_vectors.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu18.html#x21-200001.1.3" id="QQ2-21-20"><span 
+class="cmtt-10x-x-109">cartography</span><span 
+class="cmtt-10x-x-109">_from</span><span 
+class="cmtt-10x-x-109">_columns.py</span></a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >1.1.4 <a 
+href="mammult_docsu19.html#x22-210001.1.4" id="QQ2-22-21">Edge overlap, reinforcement</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu20.html#x23-220001.1.4" id="QQ2-23-22"><span 
+class="cmtt-10x-x-109">edge</span><span 
+class="cmtt-10x-x-109">_overlap.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu21.html#x24-230001.1.4" id="QQ2-24-23"><span 
+class="cmtt-10x-x-109">avg</span><span 
+class="cmtt-10x-x-109">_edge</span><span 
+class="cmtt-10x-x-109">_overlap.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu22.html#x25-240001.1.4" id="QQ2-25-24"><span 
+class="cmtt-10x-x-109">reinforcement.py</span></a></span>
+<br />   &#x00A0;<span class="sectionToc" >1.2 <a 
+href="mammult_docse2.html#x26-250001.2" id="QQ2-26-25">Inter-layer degree correlations</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >1.2.1 <a 
+href="mammult_docsu23.html#x27-260001.2.1" id="QQ2-27-26">Node ranking</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu24.html#x28-270001.2.1" id="QQ2-28-27"><span 
+class="cmtt-10x-x-109">rank</span><span 
+class="cmtt-10x-x-109">_nodes.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu25.html#x29-280001.2.1" id="QQ2-29-28"><span 
+class="cmtt-10x-x-109">rank</span><span 
+class="cmtt-10x-x-109">_nodes</span><span 
+class="cmtt-10x-x-109">_thresh.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu26.html#x30-290001.2.1" id="QQ2-30-29"><span 
+class="cmtt-10x-x-109">rank</span><span 
+class="cmtt-10x-x-109">_occurrence.py</span></a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >1.2.2 <a 
+href="mammult_docsu27.html#x31-300001.2.2" id="QQ2-31-30">Interlayer degree correlation coefficients</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu28.html#x32-310001.2.2" id="QQ2-32-31"><span 
+class="cmtt-10x-x-109">compute</span><span 
+class="cmtt-10x-x-109">_pearson.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu29.html#x33-320001.2.2" id="QQ2-33-32"><span 
+class="cmtt-10x-x-109">compute</span><span 
+class="cmtt-10x-x-109">_rho.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu30.html#x34-330001.2.2" id="QQ2-34-33"><span 
+class="cmtt-10x-x-109">compute</span><span 
+class="cmtt-10x-x-109">_tau.py</span></a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >1.2.3 <a 
+href="mammult_docsu31.html#x35-340001.2.3" id="QQ2-35-34">Interlayer degree correlation functions</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu32.html#x36-350001.2.3" id="QQ2-36-35"><span 
+class="cmtt-10x-x-109">dump</span><span 
+class="cmtt-10x-x-109">_k</span><span 
+class="cmtt-10x-x-109">_q</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu33.html#x37-360001.2.3" id="QQ2-37-36"><span 
+class="cmtt-10x-x-109">knn</span><span 
+class="cmtt-10x-x-109">_q</span><span 
+class="cmtt-10x-x-109">_from</span><span 
+class="cmtt-10x-x-109">_layers.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu34.html#x38-370001.2.3" id="QQ2-38-37"><span 
+class="cmtt-10x-x-109">knn</span><span 
+class="cmtt-10x-x-109">_q</span><span 
+class="cmtt-10x-x-109">_from</span><span 
+class="cmtt-10x-x-109">_degrees.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu35.html#x39-380001.2.3" id="QQ2-39-38"><span 
+class="cmtt-10x-x-109">fit</span><span 
+class="cmtt-10x-x-109">_knn</span></a></span>
+<br />   <span class="chapterToc" >2 <a 
+href="mammult_docch2.html#x40-390002" id="QQ2-40-39">Models of multi-layer networks</a></span>
+<br />   &#x00A0;<span class="sectionToc" >2.1 <a 
+href="mammult_docse3.html#x41-400002.1" id="QQ2-41-40">Null models</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >2.1.1 <a 
+href="mammult_docsu36.html#x42-410002.1.1" id="QQ2-42-41">Null-models of node and layer activity</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu37.html#x43-420002.1.1" id="QQ2-43-42"><span 
+class="cmtt-10x-x-109">model</span><span 
+class="cmtt-10x-x-109">_hypergeometric.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu38.html#x44-430002.1.1" id="QQ2-44-43"><span 
+class="cmtt-10x-x-109">model</span><span 
+class="cmtt-10x-x-109">_MDM.py</span></a></span>
+                                                                     
+
+                                                                     
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu39.html#x45-440002.1.1" id="QQ2-45-44"><span 
+class="cmtt-10x-x-109">model</span><span 
+class="cmtt-10x-x-109">_MSM.py</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu40.html#x46-450002.1.1" id="QQ2-46-45"><span 
+class="cmtt-10x-x-109">model</span><span 
+class="cmtt-10x-x-109">_layer</span><span 
+class="cmtt-10x-x-109">_growth.py</span></a></span>
+<br />   &#x00A0;<span class="sectionToc" >2.2 <a 
+href="mammult_docse4.html#x47-460002.2" id="QQ2-47-46">Growing multiplex networks</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >2.2.1 <a 
+href="mammult_docsu41.html#x48-470002.2.1" id="QQ2-48-47">Linear preferential attachment</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu42.html#x49-480002.2.1" id="QQ2-49-48"><span 
+class="cmtt-10x-x-109">nibilab</span><span 
+class="cmtt-10x-x-109">_linear</span><span 
+class="cmtt-10x-x-109">_delta</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu43.html#x50-490002.2.1" id="QQ2-50-49"><span 
+class="cmtt-10x-x-109">nibilab</span><span 
+class="cmtt-10x-x-109">_linear</span><span 
+class="cmtt-10x-x-109">_delay</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu44.html#x51-500002.2.1" id="QQ2-51-50"><span 
+class="cmtt-10x-x-109">nibilab</span><span 
+class="cmtt-10x-x-109">_linear</span><span 
+class="cmtt-10x-x-109">_delay</span><span 
+class="cmtt-10x-x-109">_mix</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu45.html#x52-510002.2.1" id="QQ2-52-51"><span 
+class="cmtt-10x-x-109">nibilab</span><span 
+class="cmtt-10x-x-109">_linear</span><span 
+class="cmtt-10x-x-109">_random</span><span 
+class="cmtt-10x-x-109">_times</span></a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >2.2.2 <a 
+href="mammult_docsu46.html#x53-520002.2.2" id="QQ2-53-52">Non-linear preferential attachment</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu47.html#x54-530002.2.2" id="QQ2-54-53"><span 
+class="cmtt-10x-x-109">nibilab</span><span 
+class="cmtt-10x-x-109">_nonlinear</span></a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >2.2.3 <a 
+href="mammult_docsu48.html#x55-540002.2.3" id="QQ2-55-54">Utilities</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu49.html#x56-550002.2.3" id="QQ2-56-55"><span 
+class="cmtt-10x-x-109">node</span><span 
+class="cmtt-10x-x-109">_deg</span><span 
+class="cmtt-10x-x-109">_over</span><span 
+class="cmtt-10x-x-109">_time.py</span></a></span>
+<br />   &#x00A0;<span class="sectionToc" >2.3 <a 
+href="mammult_docse5.html#x57-560002.3" id="QQ2-57-56">Multiplex networks with inter-layer degree correlations</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >2.3.1 <a 
+href="mammult_docsu50.html#x58-570002.3.1" id="QQ2-58-57">Models based on simulated annealing</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu51.html#x59-580002.3.1" id="QQ2-59-58"><span 
+class="cmtt-10x-x-109">tune</span><span 
+class="cmtt-10x-x-109">_rho</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu52.html#x60-590002.3.1" id="QQ2-60-59"><span 
+class="cmtt-10x-x-109">tune</span><span 
+class="cmtt-10x-x-109">_qnn</span><span 
+class="cmtt-10x-x-109">_adaptive</span></a></span>
+<br />   <span class="chapterToc" >3 <a 
+href="mammult_docch3.html#x61-600003" id="QQ2-61-60">Dynamics on multi-layer networks</a></span>
+<br />   &#x00A0;<span class="sectionToc" >3.1 <a 
+href="mammult_docse6.html#x62-610003.1" id="QQ2-62-61">Interacting opinions - Multilayer ising model</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu53.html#x63-620003.1" id="QQ2-63-62"><span 
+class="cmtt-10x-x-109">multiplex</span><span 
+class="cmtt-10x-x-109">_ising</span></a></span>
+<br />   &#x00A0;<span class="sectionToc" >3.2 <a 
+href="mammult_docse7.html#x64-630003.2" id="QQ2-64-63">Biased random walks</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >3.2.1 <a 
+href="mammult_docsu54.html#x65-640003.2.1" id="QQ2-65-64">Stationary distribution</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu55.html#x66-650003.2.1" id="QQ2-66-65"><span 
+class="cmtt-10x-x-109">statdistr2</span></a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >3.2.2 <a 
+href="mammult_docsu56.html#x67-660003.2.2" id="QQ2-67-66">Entropy rate</a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu57.html#x68-670003.2.2" id="QQ2-68-67"><span 
+class="cmtt-10x-x-109">entropyrate2add</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu58.html#x69-680003.2.2" id="QQ2-69-68"><span 
+class="cmtt-10x-x-109">entropyrate2mult</span></a></span>
+<br />   &#x00A0;&#x00A0;&#x00A0;<span class="subsubsectionToc" ><a 
+href="mammult_docsu59.html#x70-690003.2.2" id="QQ2-70-69"><span 
+class="cmtt-10x-x-109">entropyrate2int</span></a></span>
+   </div>
+                                                                     
+
+                                                                     
+
+                                                                     
+
+                                                                     
+
+<!--l. 265--><p class="noindent" ><span class="next">[<a 
+href="mammult_docch1.html" id="tailmammult_doc" >next</a>]</span> 
+</body></html> 
+
+                                                                     
+
+

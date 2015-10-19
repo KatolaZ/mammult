@@ -1,0 +1,42 @@
+\myprogram{{avg\_edge\_overlap.py}}
+          {compute the average edge overlap of a multiplex.}  
+          {$<$layer1$>$ [$<$layer2$>$...]}
+
+\mydescription{Compute and print on output the average edge overlap 
+
+          \begin{equation*} \omega^{*}
+          = \frac{\sum_{i}\sum_{j>i}\sum_{\alpha}a_{ij}\lay{\alpha}}{ \sum_{i}\sum_{j>i}(1
+          - \delta_{0,\sum_{\alpha}a_{ij}\lay{\alpha}})} \end{equation*}
+          
+  \noindent i.e., the expected \textit{number} of layers on which an
+   edge of the multiplex exists, and the corresponding normalised
+   quantity:
+  
+  \begin{equation*}
+      \omega = \frac{\sum_{i}\sum_{j>i}\sum_{\alpha}a_{ij}\lay{\alpha}}{M \sum_{i}\sum_{j>i}(1
+      - \delta_{0,\sum_{\alpha}a_{ij}\lay{\alpha}})}
+  \end{equation*}
+  
+  \noindent that is the expected \textit{fraction} of layers on which
+  an edge of the multiplex is present.
+  
+  Each input file contains the (undirected) edge list of a layer, and
+  each line is in the format:
+  
+  \hspace{0.5cm}\textit{src\_ID} \textit{dest\_ID}
+  
+  where \textit{src\_ID} and \textit{dest\_ID} are the IDs of the two
+  endpoints of an edge.}
+
+\myreturn{The program prints on \texttt{stdout} a single line, in the
+  format:
+  
+  \hspace{0.5cm} \textit{omega\_star omega}
+
+  \noindent where \textit{omega\_star} and \textit{omega} are,
+  respectively, the expected number and fraction of layers in which an
+  edge is present.}
+
+\myreference{\refmetrics
+
+  \vspace{0.5cm}\refvisibility}

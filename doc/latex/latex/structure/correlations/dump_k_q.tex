@@ -1,0 +1,42 @@
+M\myprogram{{dump\_k\_q}}
+          {compute the degree sequences of two layers of a multiplex.}
+          {$<$layer1$>$ $<$layer2$>$ $<$pairing$>$}
+
+\mydescription{Compute and dump on \texttt{stdout} the degree
+          sequences of two layers of a multiplex. The input
+          files \textit{layer1} and \textit{layer2} contain the
+          (undirected) edge lists of the two layers, and each line is
+          in the format:
+  
+  \hspace{0.5cm}\textit{src\_ID} \textit{dest\_ID}
+  
+  where \textit{src\_ID} and \textit{dest\_ID} are the IDs of the two
+  endpoints of an edge.
+
+  The third file \textit{pairing} is a list of lines in the format:
+
+  \hspace{0.5cm} \textit{IDL1 IDL2} 
+
+  where \textit{IDL1} is the ID of a node on layer $1$
+  and \textit{IDL2} is the ID of the same node on layer $2$. For
+  instance, the line:
+
+  \hspace{0.5cm} \textit{5 27}
+
+  indicates that node $5$ on layer $1$ has ID $27$ on layer $2$. }
+
+
+\myreturn{The program prints on \texttt{stdout} the degree of each
+node on the two layers, in the format:
+
+\hspace{0.5cm} \textit{ki qi}
+
+where \textit{ki} is the degree of node \textit{i} on layer $1$
+and \textit{qi} is the degree of node \textit{i} on layer $2$.}
+
+\myreference{\refcorrelations
+
+  \refgrowth
+
+  \refnonlinear
+  }

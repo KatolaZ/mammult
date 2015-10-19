@@ -1,0 +1,30 @@
+\myprogram{{multiplexity.py}}
+          {compute the pairwise multiplexity between all the pairs of
+          layers of a multiplex.}
+          {$<$layer1$>$ $<$layer2$>$ [$<$layer3$>$...]}
+
+\mydescription{Compute and print on output the pairwise multiplexity 
+ $Q_{\alpha, \beta}$ (i.e., the fraction of nodes active on both
+          layers) between all pairs of layers. The layers are given as
+          input in the files \textit{layer1}, \textit{layer2}, etc.
+  
+  Each input file contains the (undirected) edge list of a layer, and
+  each line is in the format:
+  
+  \hspace{0.5cm}\textit{src\_ID} \textit{dest\_ID}
+  
+  where \textit{src\_ID} and \textit{dest\_ID} are the IDs of the two
+  endpoints of an edge.}
+
+\myreturn{The program prints on \texttt{stdout} a list of lines, in
+  the format:
+
+  \hspace{0.5cm} \textit{layer1 layer2 mult}
+
+  \noindent where \textit{layer1} and \textit{layer2} are the IDs of
+  the layers, and \textit{mult} is the value of the multiplexity
+  $Q_{layer1, layer2}$. Layers IDs start from zero, are are associated
+  to the layers in the same order in which the layer files are
+  provided on the command line.}
+
+\myreference{\refcorrelations}

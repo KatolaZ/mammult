@@ -1,0 +1,29 @@
+\myprogram{{degs\_to\_activity\_overlap.py}}
+          {compute the activity and the total (overlapping) degree of
+          all the nodes of a multiplex.}
+          {$<$degree\_vectors$>$}
+
+\mydescription{Take a file which contains, on the n-th line, the degrees at each
+ layer of the n-th node, (e.g., the result of the
+ script \texttt{node\_degree\_vectors.py}), in the format:
+
+ \hspace{0.5cm}\textit{noden\_deg\_lay1 noden\_deg\_lay2 ... noden\_deg\_layM}
+
+ \noindent and compute the activity (i.e., the number of layers in
+ which a node is not isolated) and the total (overlapping) degree of
+ each node.}
+
+\myreturn{The program prints on \texttt{stdout} a list of lines, where
+ the n-th line contains the activity and the total degree of the n-th
+ nodem in the format:
+
+ \hspace{0.5cm}\textit{noden\_activity noden\_tot\_deg}
+
+ \noindent As usual, the program assumes that node IDs start from zero
+  and proceed sequentially, without gaps, i.e., if a node ID is not
+  present in any of the layer files given as input, the program
+  considers it as being isolated on all the layers.
+ }
+
+\myreference{\refcorrelations}
+

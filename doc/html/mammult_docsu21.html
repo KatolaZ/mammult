@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>1.1.4.0 avg_edge_overlap.py</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,index=2,3,4,5,next --> 
+<meta name="src" content="mammult_doc.tex"> 
+<meta name="date" content="2015-10-19 16:26:00"> 
+<link rel="stylesheet" type="text/css" href="mammult_doc.css"> 
+</head><body 
+>
+   <!--l. 3--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docsu22.html" >next</a>] [<a 
+href="mammult_docsu20.html" >prev</a>] [<a 
+href="mammult_docsu20.html#tailmammult_docsu20.html" >prev-tail</a>] [<a 
+href="#tailmammult_docsu21.html">tail</a>] [<a 
+href="mammult_docsu19.html#mammult_docsu21.html" >up</a>] </p></div>
+   <h5 class="subsubsectionHead"><a 
+ id="x24-230001.1.4"></a><span 
+class="cmtt-10x-x-109">avg</span><span 
+class="cmtt-10x-x-109">_edge</span><span 
+class="cmtt-10x-x-109">_overlap.py</span></h5>
+<!--l. 3--><p class="noindent" ><span 
+class="cmbx-10x-x-109">NAME</span>
+<!--l. 3--><p class="indent" >   <span 
+class="cmbx-10x-x-109">avg</span><span 
+class="cmbx-10x-x-109">_edge</span><span 
+class="cmbx-10x-x-109">_overlap.py </span>- compute the average edge overlap of a multiplex.
+<!--l. 3--><p class="noindent" ><span 
+class="cmbx-10x-x-109">SYNOPSYS</span>
+<!--l. 3--><p class="indent" >   <span 
+class="cmbx-10x-x-109">avg</span><span 
+class="cmbx-10x-x-109">_edge</span><span 
+class="cmbx-10x-x-109">_overlap.py  </span><span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">layer1</span><span 
+class="cmmi-10x-x-109">&#x003E; </span><span 
+class="cmitt-10x-x-109">[</span><span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">layer2</span><span 
+class="cmmi-10x-x-109">&#x003E;</span><span 
+class="cmitt-10x-x-109">...]</span>
+<!--l. 29--><p class="noindent" ><span 
+class="cmbx-10x-x-109">DESCRIPTION</span>
+<!--l. 29--><p class="indent" >   Compute and print on output the average edge overlap
+   <table 
+class="equation-star"><tr><td>
+   <center class="math-display" >
+<img 
+src="mammult_doc4x.png" alt="        &sum;  &sum;    &sum;    [&alpha;]
+ &lowast;   &sum;--&sum;-i--j&#x003E;i---&alpha;aij----
+&omega;  =   i  j&#x003E;i(1&minus; &delta;  &sum;   [&alpha;])
+                  0, &alpha; aij
+" class="math-display" ></center></td></tr></table>
+<!--l. 29--><p class="nopar" >
+<!--l. 29--><p class="noindent" >i.e., the expected <span 
+class="cmti-10x-x-109">number </span>of layers on which an edge of the multiplex exists, and
+the corresponding normalised quantity:
+   <table 
+class="equation-star"><tr><td>
+   <center class="math-display" >
+<img 
+src="mammult_doc5x.png" alt="         &sum;  &sum;    &sum;   a[&alpha;]
+&omega; = ---&sum;--&sum;i--j&#x003E;i--&alpha;--ij-----
+    M    i  j&#x003E;i(1&minus; &delta;0,&sum;&alpha; a[i&alpha;j] )
+" class="math-display" ></center></td></tr></table>
+<!--l. 29--><p class="nopar" >
+<!--l. 29--><p class="noindent" >that is the expected <span 
+class="cmti-10x-x-109">fraction </span>of layers on which an edge of the multiplex is
+present.
+<!--l. 29--><p class="indent" >   Each input file contains the (undirected) edge list of a layer, and each line is
+in the format:
+<!--l. 29--><p class="indent" >   &#x00A0;    <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID dest</span><span 
+class="cmti-10x-x-109">_ID</span>
+<!--l. 29--><p class="indent" >   where <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID </span>and <span 
+class="cmti-10x-x-109">dest</span><span 
+class="cmti-10x-x-109">_ID </span>are the IDs of the two endpoints of an
+edge.
+<!--l. 38--><p class="noindent" ><span 
+class="cmbx-10x-x-109">OUTPUT</span>
+<!--l. 38--><p class="indent" >   The program prints on <span 
+class="cmtt-10x-x-109">stdout </span>a single line, in the format:
+<!--l. 38--><p class="indent" >   &#x00A0;     <span 
+class="cmti-10x-x-109">omega</span><span 
+class="cmti-10x-x-109">_star omega</span>
+<!--l. 38--><p class="noindent" >where <span 
+class="cmti-10x-x-109">omega</span><span 
+class="cmti-10x-x-109">_star </span>and <span 
+class="cmti-10x-x-109">omega </span>are, respectively, the expected number and fraction
+of layers in which an edge is present.
+<!--l. 42--><p class="noindent" ><span 
+class="cmbx-10x-x-109">REFERENCE</span>
+<!--l. 42--><p class="indent" >   F. Battiston, V. Nicosia, V. Latora, &#8220;Structural measures for multiplex
+networks&#8221;, <span 
+class="cmti-10x-x-109">Phys. Rev. E </span><span 
+class="cmbx-10x-x-109">89</span>, 032804 (2014).
+<!--l. 42--><p class="indent" >   Link to paper: <a 
+href="http://journals.aps.org/pre/abstract/10.1103/PhysRevE.89.032804" class="url" ><span 
+class="cmtt-10x-x-109">http://journals.aps.org/pre/abstract/10.1103/PhysRevE.89.032804</span></a>
+<!--l. 42--><p class="indent" >   L. Lacasa, V. Nicosia, V. Latora, <span 
+class="cmti-10x-x-109">&#8220;Network structure of multivariate time</span>
+<span 
+class="cmti-10x-x-109">series&#8221;</span>, accepted for publication in Scientific Reports, arxiv:1408.0925
+(2015).
+<!--l. 42--><p class="indent" >   Link to paper: <a 
+href="http://arxiv.org/abs/1408.0925" class="url" ><span 
+class="cmtt-10x-x-109">http://arxiv.org/abs/1408.0925</span></a>
+                                                                     
+
+                                                                     
+   <!--l. 7--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docsu22.html" >next</a>] [<a 
+href="mammult_docsu20.html" >prev</a>] [<a 
+href="mammult_docsu20.html#tailmammult_docsu20.html" >prev-tail</a>] [<a 
+href="mammult_docsu21.html" >front</a>] [<a 
+href="mammult_docsu19.html#mammult_docsu21.html" >up</a>] </p></div>
+<!--l. 7--><p class="indent" >   <a 
+ id="tailmammult_docsu21.html"></a>  
+</body></html> 

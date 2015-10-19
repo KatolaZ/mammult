@@ -1,0 +1,32 @@
+\myprogram{{cartography\_from\_deg\_vectors.py}}
+          {create a multiplex cartography diagram.}  
+          {$<$node\_deg\_vectors$>$}
+
+\mydescription{Compute and print on output the total degree and the
+          multiplex participation coefficient of all the nodes of a
+          multiplex network whose list of node degree vectors is
+          provided as input. The input file is in the format:
+
+  \hspace{0.5cm} \textit{IDn\_deg1 IDn\_deg\_2 ... IDn\_degM}
+
+  \noindent where \textit{IDn\_degX} is the degree of node $n$ at
+  layer $X$. The input file can be generated using the
+  script \texttt{node\_degree\_vectors.py}.}
+
+
+\myreturn{The program prints on \texttt{stdout} a list of lines in the
+  format:
+  
+  \hspace{0.5cm} \textit{tot\_deg part\_coeff}  
+
+  \noindent where \textit{tot\_deg} is the total degree of the node
+  and \textit{part\_coeff} is the corresponding participation
+  coefficient. 
+  
+  \noindent As usual, node IDs start from zero and proceed
+  sequentially, without gaps, so if one of the lines in the input
+  files contains just zeros, the program considers the corresponding
+  node as being isolated on all the layers, and both its total degree
+  and multiplex participation coefficient are set equal to zero. }
+
+\myreference{\refmetrics}

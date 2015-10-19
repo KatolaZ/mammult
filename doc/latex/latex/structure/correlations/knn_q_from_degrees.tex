@@ -1,0 +1,64 @@
+\myprogram{{knn\_q\_from\_degrees.py}}
+          {compute the inter-layer degree-degree correlation function.}
+          {$<$filein$>$}
+
+\mydescription{Compute the  inter-layer degree
+          correlation functions for two layers of a multiplex, using
+          the degrees of the nodes specified in the input file. The
+          format of the input file is as follows
+
+\hspace{0.5cm} \textit{ki qi}
+
+where \textit{ki} and \textit{qi} are, respectively, the degree at
+layer 1 and the degree at layer 2 of node \textit{i}.
+
+          If we consider two layers of a multiplex, and we denote by
+          $k$ the degree of a node on the first layer and by $q$ the
+          degree of the same node on the second layers, the
+          inter-layer degree correlation function is defined as
+
+          \begin{equation*}
+            \overline{k}(q) = \frac{1}{N_{k}}\sum_{k'} k' P(k'|q)
+          \end{equation*}
+           
+           where $P(k'|q)$ is the probability that a node with degree
+           $q$ on the second layer has degree equal to $k'$ on the
+           first layer, and $N_k$ is the number of nodes with degree
+           $k$ on the first layer. The quantity $\overline{k}(q)$ is
+           the expected degree at layer $1$ of node that have degree
+           equal to $q$ on layer $2$. The dual quantity:
+
+          \begin{equation*}
+            \overline{q}(k) = \frac{1}{N_{q}}\sum_{q'} q' P(q'|k)
+          \end{equation*}
+           
+           is the average degree on layer $2$ of nodes having degree
+           $k$ on layer $1$.
+}
+
+
+\myreturn{The program prints on  \texttt{stdout} a list of lines in
+           the format:
+
+           \hspace{0.5cm} \textit{k $\overline{q}(k)$}           
+
+           where \textit{k} is the degree on layer $1$ and
+           $\overline{q}(k)$ is the average degree on layer $2$ of
+           nodes having degree equal to $k$ on layer $1$. 
+
+           The program also prints on \texttt{stderr} a list of lines in
+           the format:
+
+           \hspace{0.5cm} \textit{q $\overline{k}(q)$}           
+
+           where \textit{q} is the degree on layer $2$ and
+           $\overline{k}(q)$ is the average degree on layer $1$ of
+           nodes having degree equal to $q$ on layer $2$. 
+           }
+
+\myreference{\refcorrelations
+
+  \refgrowth
+
+  \refnonlinear
+  }

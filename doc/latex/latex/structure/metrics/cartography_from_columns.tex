@@ -1,0 +1,35 @@
+\myprogram{{cartography\_from\_columns.py}}
+          {compute total and participation coefficient of generic
+          structural descriptors of the nodes of a multiplex.}
+          {$<$filein$>$ $<$col1$>$ $<$col2$>$ [$<$col3$>$...]}
+
+\mydescription{Compute and print on output the sum and the
+          corresponding participation coefficient of a generic
+          structural descriptor of the nodes of a multiplex.
+
+   \noindent The input file is a generic collection of
+   single-space-separated columns, where each line corresponds to a
+   node. The user must specify the IDs of the columns which contain
+   the node structural descriptors to be used in the cartography
+   diagram. Columns IDs start from ZERO. For example:
+
+   \textbf{python cartography\_from\_layers.py filein.txt 0
+   2 4 6 8}
+
+   \noindent will create a cartography diagram assuming that the
+   multiplex network has five layers, and that the node structural
+   descriptors at each layers are contained in the first (0), third
+   (2), fifth (4), seventh (6) and nineth (8) columns of each row.}
+
+
+\myreturn{The program prints on \texttt{stdout} a list of lines in the
+  format:
+  
+  \hspace{0.5cm} \textit{tot\_n P\_n}
+
+  where \textit{tot\_n} is the sum over the layers of the considered
+  structural descriptor for node $n$, and \textit{P\_n} is the
+  associated participation coefficient 
+  }
+
+\myreference{\refcorrelations}

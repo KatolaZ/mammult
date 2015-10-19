@@ -1,0 +1,22 @@
+%%%
+%%% Layer activity
+%%%
+
+\myprogram{{multiplex\_ising}}
+          {compute the coupled ising model in a multiplex with $2$ layers.}
+          {$<$layer1$>$ $<$layer2$>$ $<$T$>$ $<$J$>$ $<\gamma>$ $<h^{[1]}>$ $<h^{[2]}>$ $<p_1>$ $<p_2>$ $<num epochs>$}
+
+\mydescription{Compute and print the output of the ising dynamics on two coupled layers of a multiplex network.
+  Files \textit{layer1}, \textit{layer2}, contain the (undirected) edge list of the two layer, and each
+  line is in the format:
+  
+  \hspace{0.5cm}\textit{src\_ID} \textit{dest\_ID}
+  
+  where \textit{src\_ID} and \textit{dest\_ID} are the IDs of the two
+  endpoints of an edge.
+
+ $T$ is the value of thermal noise in the system, $J$ the value of peer pressure, $\gamma$ the relative ratio between internal coupling and peer pressure, $h^{[1]}$ and $h^{[2]}$ the external fields acting on the two layers, $p_1$ the probability for a spin on layer $1$ at $t=0$ to be up, $p_2$ the same probability for spins on layer $2$, $num epochs$ the number of epochs for the simulation.} 
+
+\myreturn{One line, reporting all controlling parameter, the value of consensus in layer $1$ $m^{[1]}$, the value of consensus in layer $2$ $m^{[2]}$ and the coherence $C$.}
+
+\myreference{\refising}

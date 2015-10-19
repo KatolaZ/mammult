@@ -1,0 +1,31 @@
+\myprogram{{compute\_tau.py}}
+          {compute the Kendall's rank correlation coefficient $\tau_b$
+          between two rankings.}  {$<$file1$>$ $<$file2$>$}
+
+\mydescription{Compute the Kendall's rank correlation coefficient
+           $\tau_b$ between two rankings provided in the input
+          files \textit{file1} and \textit{file2}. Each input file
+          contains a list of lines, where the n-th line contains the
+          value of rank of the n-th node. For instance, \textit{file1}
+          and \textit{file2} might contain the ranks of nodes induced
+          by the degree sequences of two distinct layers of a
+          multiplex.
+
+          However, the program is pretty general and can be used to
+          compute the Kendall's rank correlation coefficient between
+          any generic pair of rankings.
+
+          N.B.: This implementation takes properly into account rank
+          ties.}
+
+
+\myreturn{The program prints on \texttt{stdout} the value of the
+          Kendall's rank correlation coefficient $\tau_b$ between the
+          two rankings provided as input. }
+
+\myreference{\refcorrelations
+
+  \refgrowth
+
+  \refnonlinear
+}

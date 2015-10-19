@@ -1,0 +1,25 @@
+%%%
+%%% node_activity
+%%%
+\myprogram{{node\_activity.py}}
+          {compute the activity of the nodes of a multiplex, i.e. the
+            number of layers where each node is not isolated.}
+          {$<$layer1$>$ [$<$layer2$>$ ...]}
+
+\mydescription{Compute and print on output the activity of the nodes
+  of a multiplex network, whose layers are given as input in the files
+  \textit{layer1}, \textit{layer2}, etc.
+  
+  Each file contains the (undirected) edge list of a layer, and each
+  line is in the format:
+  
+  \hspace{0.5cm}\textit{src\_ID} \textit{dest\_ID}
+  
+  where \textit{src\_ID} and \textit{dest\_ID} are the IDs of the two
+  endpoints of an edge.}
+
+\myreturn{A list of lines, where the n-th line is the value of activity
+  of the n-th node, starting from \textbf{0}.}
+
+\myreference{\refcorrelations}
+

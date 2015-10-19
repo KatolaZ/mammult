@@ -1,0 +1,50 @@
+\myprogram{{fit\_knn}}
+          {power-law fit of the inter-layer degree correlation
+          function.}  
+          {$<$filein$>$ $<$alpha$>$}
+
+\mydescription{Perform a power-law fit of the inter-layer degree
+          correlation function:
+
+          \begin{equation*}
+           \overline{q}(k) = \frac{1}{N_{q}}\sum_{q'} q' P(q'|k)
+          \end{equation*}
+
+          where $k$ is the degree of a node on layer $1$, $q$ is the
+          degree on layer $2$ and $P(q|k)$ is the probability that a
+          node with degree $k$ on layer $1$ has degree $q$ on layer
+          $2$. The program assumes that $\overline{q}(k)$ can be
+          written in the form $a k^{b}$, and computes the two
+          parameters $a$ and $b$ through a linear fit of the log-log
+          plot of $\overline{q}(k)$.
+
+          The input file \textit{filein} contains a list of lines in
+          the format:
+
+          \hspace{0.5cm} \textit{ki qi}
+
+          where \textit{ki} is the degree of node $i$ at layer $1$
+          and \textit{qi} is the degree of node $i$ at layer $2$. 
+
+          The second parameter \textit{alpha} is the ratio of the
+          progression used to generate the exponentially-distributed
+          bins for the log-log plot. Typical values of \textit{alpha}
+          are between $1.1$ and $2.0$.
+          
+          
+          N.B.: The exponent $b$ computed with this method is known to
+          be inaccurate.
+}
+
+
+
+\myreturn{The program prints on \texttt{stdout} the values of the
+          parameters $a$ and $b$ of the power-law fit $\overline{q}(k)
+          = a k^{b}$.}
+
+\myreference{\refcorrelations
+
+  \refgrowth
+
+  \refnonlinear
+  }

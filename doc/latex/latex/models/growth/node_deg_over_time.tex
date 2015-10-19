@@ -1,0 +1,50 @@
+\myprogram{{node\_deg\_over\_time.py}}
+          {Time evolution of the degree of a node in a growing graph.}  
+          {$<$layer$>$ $<$arrival\_times$>$ $<$node\_id$>$
+          [$<$node\_id$>$ ...]}
+
+\mydescription{Compute the degree $k_{i}(t)$ of node $i$ in a growing
+          network as a function of time. The file \textit{layer}
+          contains the edge list of the final network. Each line of
+          the file is in the format:
+  
+  \hspace{0.5cm}\textit{src\_ID} \textit{dest\_ID}
+  
+  where \textit{src\_ID} and \textit{dest\_ID} are the IDs of the two
+  endpoints of an edge.
+  
+  The file \textit{arrival\_times} is a list of node arrival times, in
+ the format:
+
+ \hspace{0.5cm} \textit{time\_i node\_i}
+ 
+ where \textit{time\_i} is the time at which \textit{node\_i} arrived
+ in the graph. Notice that \textit{time\_i} must be an integer in the
+ range [0, N-1], where N is the total number of nodes in the final
+ graph.
+
+ The third parameter \textit{node\_id} is the ID of the node whose
+ degree over time will be printed on output. If more than
+ one \textit{node\_id} is provided, the degrees over time of all the
+ corresponding nodes are printed on output.
+ }
+
+
+\myreturn{The program prints on \texttt{stdout} a list of lines in the
+ format:
+
+ \hspace{0.5cm} \textit{t kit}
+ 
+ where \textit{kit} is the degree of node \textit{i} at
+ time \textit{t}. The first line of output is in the format:
+
+ \hspace{0.5cm} \textit{\#\#\#\# node\_id}
+
+ where \textit{node\_id} is the ID of node \textit{i}.
+
+ If more than one \textit{node\_id}s is provided as input, the program
+ prints the degree over time of all of them, sequentially.
+ 
+}
+
+\myreference{\refgrowth}

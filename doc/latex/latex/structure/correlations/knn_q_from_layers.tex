@@ -1,0 +1,80 @@
+\myprogram{{knn\_q\_from\_layers.py}}
+          {compute intra-layer and inter-layer degree-degree
+          correlation coefficients.}  {$<$layer1$>$ $<$layer2$>$}
+
+\mydescription{Compute the intra-layer and the inter-layer degree
+          correlation functions for two layers given as input. The
+          intra-layer degree correlation function quantifies the
+          presence of degree-degree correlations in a single layer
+          network, and is defined as:
+
+          \begin{equation*}
+            \avg{k_{nn}(k)} = \frac{1}{k N_k}\sum_{k'}k'P(k'|k)
+          \end{equation*}
+          
+          where $P(k'|k)$ is the probability that a neighbour of a
+          node with degree $k$ has degree $k'$, and $N_k$ is the
+          number of nodes with degree $k$. The quantity
+          $\avg{k_{nn}(k)}$ is the average degree of the neighbours of
+          nodes having degree equal to $k$.
+
+          If we consider two layers of a multiplex, and we denote by
+          $k$ the degree of a node on the first layer and by $q$ the
+          degree of the same node on the second layers, the
+          inter-layer degree correlation function is defined as
+
+          \begin{equation*}
+            \overline{k}(q) = \sum_{k'} k' P(k'|q)
+          \end{equation*}
+           
+           where $P(k'|q)$ is the probability that a node with degree
+           $q$ on the second layer has degree equal to $k'$ on the
+           first layer, and $N_q$ is the number of nodes with degree
+           $q$ on the second layer. The quantity $\overline{k}(q)$ is
+           the expected degree at layer $1$ of node that have degree
+           equal to $q$ on layer $2$. The dual quantity:
+
+          \begin{equation*}
+            \overline{q}(k) = \sum_{q'} q' P(q'|k)
+          \end{equation*}
+           
+           is the average degree on layer $2$ of nodes having degree
+           $k$ on layer $1$.
+}
+
+
+\myreturn{The program creates two output files, respectively called
+
+\hspace{0.5cm} \textit{file1\_file2\_k1}
+
+and
+
+\hspace{0.5cm} \textit{file1\_file2\_k2}
+
+The first file contains a list of lines in the format:
+
+\hspace{0.5cm} \textit{k $\avg{k_{nn}(k)}$ $\sigma_k$
+$\overline{q}(k)$ $\sigma_{\overline{q}}$}
+
+where $k$ is the degree at first layer, $\avg{k_{nn}(k)}$ is the
+average degree of the neighbours at layer $1$ of nodes having degree
+$k$ at layer $1$, $\sigma_k$ is the standard deviation associated to
+$\avg{k_{nn}(k)}$, $\overline{q}(k)$ is the average degree at layer
+$2$ of nodes having degree equal to $k$ at layer $1$, and
+$\sigma_{\overline{q}}$ is the standard deviation associated to
+$\overline{q}(k)$. 
+
+The second file contains a similar list of lines, in the format:
+
+\hspace{0.5cm} \textit{q $\avg{q_{nn}(q)}$ $\sigma_q$
+$\overline{k}(q)$ $\sigma_{\overline{k}}$}
+
+with obvious meaning.
+}
+
+\myreference{\refcorrelations
+
+  \refgrowth
+
+  \refnonlinear
+  }

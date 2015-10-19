@@ -1,0 +1,24 @@
+\myprogram{{rank\_occurrence.py}}
+          {compute the intersection of two rankings.}  
+          {$<$rank1$>$ $<$rank2$>$ $<$increment$>$}
+
+\mydescription{Get two rankings \textit{rank1} and \textit{rank2} 
+                   and compute the size of
+the \textit{k}-intersection, i.e. the number of elements which are
+present in the first k positions of both rankings, as a function
+of \textit{k}.  The parameter \textit{increment} determines the
+distance between two subsequent values of \textit{k}.
+
+Each input file is a list of node IDs, one per line, where the first
+line contains the ID of the highest ranked node.
+}
+
+\myreturn{The program prints on \texttt{stdout} a list of lines in the
+format:
+  
+  \hspace{0.5cm} \textit{k num\_k}
+  
+  where \textit{num\_k} is the number of nodes which are present in
+  the first \textit{k} positions of both rankings.}
+
+\myreference{\refcorrelations}

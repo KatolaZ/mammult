@@ -1,0 +1,38 @@
+\myprogram{{model\_MSM.py}}
+          {Multi-activity Stochastic Model.} 
+          {$<$node\_Bi\_file$>$ $<$M$>$}
+
+\mydescription{This is the Multi-activity Stochastic Model (MSM). 
+           In this model each node $i$ is considered active if it was
+           active in the reference multiplex, and is activated on
+           each layer with a probability equal to $B_i/M$ where $B_i$
+           was the activity of node $i$ in the reference multiplex.
+
+          The file \textit{node\_Bi\_file}  is in the format:
+          
+          \hspace{0.5cm} \textit{node\_i Bi)}
+          
+          where \textit{Bi} is the value of node activity
+          of \textit{node\_i} in the reference multiplex.
+          
+          
+          The parameter \textit{M} is the number of layers in the
+          multiplex.
+}         
+
+\myreturn{The program prints on \texttt{stdout} a node-layer list of lines in the
+ format:
+
+ \hspace{0.5cm} \textit{node\_i layer\_i}
+ 
+ where \textit{node\_i} is the ID of a node and \textit{layre\_i} is
+ the ID of a layer. This list indicates which nodes are active in
+ which layer. For instance, the line:
+
+ \hspace{0.5cm} \textit{24 3}
+
+ indicates that the node with ID \textit{24} is active on
+ layer \textit{3}.
+}
+
+\myreference{\refcorrelations}

@@ -1,0 +1,43 @@
+\myprogram{{part\_coeff.py}}
+          {compute the multiplex partifipation coefficient of all the nodes of
+          a multiplex.}  {$<$layer1$>$ $<$layer2$>$ [$<$layer3$>$...]}
+
+\mydescription{Compute and print on output the multiplex participation
+          coefficient $P_i$ for each node $i$ of a multiplex. The
+                       participation coefficient is defined as:
+
+          \begin{equation*}
+          P_i=\frac{M}{M-1}\left[1-\sum_{\alpha=1}^M\biggl(\frac{k_i^{[\alpha]}}{o_i}\biggr)^2\right] 
+          \end{equation*}
+
+  \noindent Note that $P_i$ takes values in $[0,1]$, where $P_i=0$
+  if and only if node $i$ is active on exactly one of the layers,
+  while $P_i=1$ if node $i$ has equal degree on all the $M$ layers.
+
+  Each input file contains the (undirected) edge list of a layer, and
+  each line is in the format:
+  
+  \hspace{0.5cm}\textit{src\_ID} \textit{dest\_ID}
+  
+  where \textit{src\_ID} and \textit{dest\_ID} are the IDs of the two
+  endpoints of an edge.}
+
+\myreturn{The program prints on \texttt{stdout} a list of lines in the
+  format:
+  
+  \hspace{0.5cm} \textit{deg\_n P\_n col\_n}  
+
+  where \textit{deg\_n} is the total degree of node $n$, \textit{P\_n}
+  is the participation coefficient of node $n$ and \textit{col} is the
+  integer representation of the activity bitstring of node $n$, which
+  is a number between $0$ and $2^{M}-1$. The field \textit{col} might
+  be useful in visualisations, where it would be possible to associate
+  different colors to nodes having diffrent node activity patterns.
+  
+  \noindent As usual, node IDs start from zero and proceed
+  sequentially, without gaps, i.e., if a node ID is not present in any
+  of the layer files given as input, the program considers it as being
+  isolated on all the layers, and is set to zero.
+  }
+
+\myreference{\refmetrics}

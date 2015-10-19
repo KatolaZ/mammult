@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>2.2.1.0 nibilab_linear_random_times</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,index=2,3,4,5,next --> 
+<meta name="src" content="mammult_doc.tex"> 
+<meta name="date" content="2015-10-19 16:26:00"> 
+<link rel="stylesheet" type="text/css" href="mammult_doc.css"> 
+</head><body 
+>
+   <!--l. 6--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docsu46.html" >next</a>] [<a 
+href="mammult_docsu44.html" >prev</a>] [<a 
+href="mammult_docsu44.html#tailmammult_docsu44.html" >prev-tail</a>] [<a 
+href="#tailmammult_docsu45.html">tail</a>] [<a 
+href="mammult_docsu41.html#mammult_docsu45.html" >up</a>] </p></div>
+   <h5 class="subsubsectionHead"><a 
+ id="x52-510002.2.1"></a><span 
+class="cmtt-10x-x-109">nibilab</span><span 
+class="cmtt-10x-x-109">_linear</span><span 
+class="cmtt-10x-x-109">_random</span><span 
+class="cmtt-10x-x-109">_times</span></h5>
+<!--l. 6--><p class="noindent" ><span 
+class="cmbx-10x-x-109">NAME</span>
+<!--l. 6--><p class="indent" >   <span 
+class="cmbx-10x-x-109">nibilab</span><span 
+class="cmbx-10x-x-109">_linear</span><span 
+class="cmbx-10x-x-109">_random</span><span 
+class="cmbx-10x-x-109">_times </span>- Multiplex linear preferential attachment
+model &#8211; Asynchronous arrival with randomly sampled arrival times on layer
+2.
+<!--l. 6--><p class="noindent" ><span 
+class="cmbx-10x-x-109">SYNOPSYS</span>
+<!--l. 6--><p class="indent" >   <span 
+class="cmbx-10x-x-109">nibilab</span><span 
+class="cmbx-10x-x-109">_linear</span><span 
+class="cmbx-10x-x-109">_random</span><span 
+class="cmbx-10x-x-109">_times  </span><span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">N</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">m</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">m0</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">outfile</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">a</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">b</span><span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">c</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">d</span><span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<!--l. 50--><p class="noindent" ><span 
+class="cmbx-10x-x-109">DESCRIPTION</span>
+<!--l. 50--><p class="indent" >   Grow a two-layer multiplex network using the multiplex linear preferential
+attachment model by Nicosia, Bianconi, Latora, Barthelemy (NiBiLaB).
+<!--l. 50--><p class="indent" >   The probability for a newly arrived node <span 
+class="cmmi-10x-x-109">i </span>to create a link to node <span 
+class="cmmi-10x-x-109">j </span>on layer
+1 is:
+   <table 
+class="equation-star"><tr><td>
+   <center class="math-display" >
+<img 
+src="mammult_doc21x.png" alt="&Pi;1i&rarr;j &prop;  ak[1j]+ bk[j2]
+" class="math-display" ></center></td></tr></table>
+<!--l. 50--><p class="nopar" >
+<!--l. 50--><p class="indent" >   and the dual probability for <span 
+class="cmmi-10x-x-109">i </span>to create a link to <span 
+class="cmmi-10x-x-109">j </span>on layer 2 is:
+   <table 
+class="equation-star"><tr><td>
+   <center class="math-display" >
+<img 
+src="mammult_doc22x.png" alt="  2       [1]    [2]
+&Pi; i&rarr;j &prop;  ck j + dkj
+" class="math-display" ></center></td></tr></table>
+<!--l. 50--><p class="nopar" >
+<!--l. 50--><p class="indent" >   Each new node arrives on layer 1, but its replica on the other layer appears at
+a uniformly chosen random time in [<span 
+class="cmmi-10x-x-109">m</span>0 + 1;<span 
+class="cmmi-10x-x-109">N</span>].
+<!--l. 50--><p class="indent" >   The (mandatory) parameters are as follows:
+     <ul class="itemize1">
+     <li class="itemize"><span 
+class="cmbx-10x-x-109">N </span>number of nodes in the final graph
+     </li>
+     <li class="itemize"><span 
+class="cmbx-10x-x-109">m </span>number of new edges brought by each new node
+     </li>
+     <li class="itemize"><span 
+class="cmbx-10x-x-109">m0 </span>number of nodes in the initial seed graph. <span 
+class="cmti-10x-x-109">m0 </span>must be larger than
+     of equal to <span 
+class="cmti-10x-x-109">m</span>.
+     </li>
+     <li class="itemize"><span 
+class="cmbx-10x-x-109">outfile </span>the name of the file which will contain the
+     </li>
+     <li class="itemize"><span 
+class="cmbx-10x-x-109">a,b,c,d </span>the coefficients of the attaching probability function
+     </li></ul>
+<!--l. 61--><p class="noindent" ><span 
+class="cmbx-10x-x-109">OUTPUT</span>
+<!--l. 61--><p class="indent" >   The program dumps on the file <span 
+class="cmtt-10x-x-109">outfile </span>the (undirected) edge list of the
+resulting network. Each line of the file is in the format:
+<!--l. 61--><p class="indent" >   &#x00A0;    <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID dest</span><span 
+class="cmti-10x-x-109">_ID</span>
+<!--l. 61--><p class="indent" >   where <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID </span>and <span 
+class="cmti-10x-x-109">dest</span><span 
+class="cmti-10x-x-109">_ID </span>are the IDs of the two endpoints of an
+edge.
+<!--l. 63--><p class="noindent" ><span 
+class="cmbx-10x-x-109">REFERENCE</span>
+<!--l. 63--><p class="indent" >   V. Nicosia, G. Bianconi, V. Latora, M. Barthelemy, &#8220;Growing multiplex
+networks&#8221;, <span 
+class="cmti-10x-x-109">Phys. Rev. Lett. </span><span 
+class="cmbx-10x-x-109">111</span>, 058701 (2013).
+<!--l. 63--><p class="indent" >   Link to paper: <a 
+href="http://prl.aps.org/abstract/PRL/v111/i5/e058701" class="url" ><span 
+class="cmtt-10x-x-109">http://prl.aps.org/abstract/PRL/v111/i5/e058701</span></a>
+                                                                     
+
+                                                                     
+   <!--l. 230--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docsu46.html" >next</a>] [<a 
+href="mammult_docsu44.html" >prev</a>] [<a 
+href="mammult_docsu44.html#tailmammult_docsu44.html" >prev-tail</a>] [<a 
+href="mammult_docsu45.html" >front</a>] [<a 
+href="mammult_docsu41.html#mammult_docsu45.html" >up</a>] </p></div>
+<!--l. 230--><p class="indent" >   <a 
+ id="tailmammult_docsu45.html"></a>  
+</body></html> 

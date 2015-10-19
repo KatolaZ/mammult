@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>3.1.0.0 multiplex_ising</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,index=2,3,4,5,next --> 
+<meta name="src" content="mammult_doc.tex"> 
+<meta name="date" content="2015-10-19 16:26:00"> 
+<link rel="stylesheet" type="text/css" href="mammult_doc.css"> 
+</head><body 
+>
+   <!--l. 7--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docse7.html" >next</a>] [<a 
+href="mammult_docse6.html" >prev</a>] [<a 
+href="mammult_docse6.html#tailmammult_docse6.html" >prev-tail</a>] [<a 
+href="#tailmammult_docsu53.html">tail</a>] [<a 
+href="mammult_docse6.html#mammult_docsu53.html" >up</a>] </p></div>
+   <h5 class="subsubsectionHead"><a 
+ id="x63-620003.1"></a><span 
+class="cmtt-10x-x-109">multiplex</span><span 
+class="cmtt-10x-x-109">_ising</span></h5>
+<!--l. 7--><p class="noindent" ><span 
+class="cmbx-10x-x-109">NAME</span>
+<!--l. 7--><p class="indent" >   <span 
+class="cmbx-10x-x-109">multiplex</span><span 
+class="cmbx-10x-x-109">_ising </span>- compute the coupled ising model in a multiplex with 2
+layers.
+<!--l. 7--><p class="noindent" ><span 
+class="cmbx-10x-x-109">SYNOPSYS</span>
+<!--l. 7--><p class="indent" >   <span 
+class="cmbx-10x-x-109">multiplex</span><span 
+class="cmbx-10x-x-109">_ising  </span><span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">layer1</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">layer2</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">T</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">J</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C; &gamma; &#x003E; &#x003C; h</span><sup><span 
+class="cmr-8">[1]</span></sup> <span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<span 
+class="cmmi-10x-x-109">&#x003C; h</span><sup><span 
+class="cmr-8">[2]</span></sup> <span 
+class="cmmi-10x-x-109">&#x003E; &#x003C; p</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmmi-10x-x-109">&#x003E; &#x003C; p</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmmi-10x-x-109">&#x003E; &#x003C; numepochs &#x003E;</span>
+<!--l. 18--><p class="noindent" ><span 
+class="cmbx-10x-x-109">DESCRIPTION</span>
+<!--l. 18--><p class="indent" >   Compute and print the output of the ising dynamics on two coupled layers of
+a multiplex network. Files <span 
+class="cmti-10x-x-109">layer1</span>, <span 
+class="cmti-10x-x-109">layer2</span>, contain the (undirected) edge list of the
+two layer, and each line is in the format:
+<!--l. 18--><p class="indent" >   &#x00A0;    <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID dest</span><span 
+class="cmti-10x-x-109">_ID</span>
+<!--l. 18--><p class="indent" >   where <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID </span>and <span 
+class="cmti-10x-x-109">dest</span><span 
+class="cmti-10x-x-109">_ID </span>are the IDs of the two endpoints of an
+edge.
+<!--l. 18--><p class="indent" >   <span 
+class="cmmi-10x-x-109">T </span>is the value of thermal noise in the system, <span 
+class="cmmi-10x-x-109">J </span>the value of peer pressure, <span 
+class="cmmi-10x-x-109">&gamma;</span>
+the relative ratio between internal coupling and peer pressure, <span 
+class="cmmi-10x-x-109">h</span><sup><span 
+class="cmr-8">[1]</span></sup> and <span 
+class="cmmi-10x-x-109">h</span><sup><span 
+class="cmr-8">[2]</span></sup> the
+external fields acting on the two layers, <span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmr-8">1</span></sub> the probability for a spin on layer 1 at
+<span 
+class="cmmi-10x-x-109">t </span>= 0 to be up, <span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmr-8">2</span></sub> the same probability for spins on layer 2, <span 
+class="cmmi-10x-x-109">numepochs </span>the
+                                                                     
+
+                                                                     
+number of epochs for the simulation.
+<!--l. 20--><p class="noindent" ><span 
+class="cmbx-10x-x-109">OUTPUT</span>
+<!--l. 20--><p class="indent" >   One line, reporting all controlling parameter, the value of consensus in
+layer 1 <span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">[1]</span></sup>, the value of consensus in layer 2 <span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">[2]</span></sup> and the coherence
+<span 
+class="cmmi-10x-x-109">C</span>.
+<!--l. 22--><p class="noindent" ><span 
+class="cmbx-10x-x-109">REFERENCE</span>
+<!--l. 22--><p class="indent" >   F. Battiston, A. Cairoli, V. Nicosia, A. Baule, V. Latora, <span 
+class="cmti-10x-x-109">&#8220;Interplay between</span>
+<span 
+class="cmti-10x-x-109">consensus and coherence in a model of interacting opinions&#8221;</span>, accepted for
+publication in Physica D, arxiv:1506.04544 (2015).
+<!--l. 22--><p class="indent" >   Link to paper: <a 
+href="http://arxiv.org/abs/1506.04544" class="url" ><span 
+class="cmtt-10x-x-109">http://arxiv.org/abs/1506.04544</span></a>
+                                                                     
+
+                                                                     
+   <!--l. 253--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docse7.html" >next</a>] [<a 
+href="mammult_docse6.html" >prev</a>] [<a 
+href="mammult_docse6.html#tailmammult_docse6.html" >prev-tail</a>] [<a 
+href="mammult_docsu53.html" >front</a>] [<a 
+href="mammult_docse6.html#mammult_docsu53.html" >up</a>] </p></div>
+<!--l. 253--><p class="indent" >   <a 
+ id="tailmammult_docsu53.html"></a>  
+</body></html> 

@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>1.2.3.0 fit_knn</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,index=2,3,4,5,next --> 
+<meta name="src" content="mammult_doc.tex"> 
+<meta name="date" content="2015-10-19 16:26:00"> 
+<link rel="stylesheet" type="text/css" href="mammult_doc.css"> 
+</head><body 
+>
+   <!--l. 4--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docch2.html" >next</a>] [<a 
+href="mammult_docsu34.html" >prev</a>] [<a 
+href="mammult_docsu34.html#tailmammult_docsu34.html" >prev-tail</a>] [<a 
+href="#tailmammult_docsu35.html">tail</a>] [<a 
+href="mammult_docsu31.html#mammult_docsu35.html" >up</a>] </p></div>
+   <h5 class="subsubsectionHead"><a 
+ id="x39-380001.2.3"></a><span 
+class="cmtt-10x-x-109">fit</span><span 
+class="cmtt-10x-x-109">_knn</span></h5>
+<!--l. 4--><p class="noindent" ><span 
+class="cmbx-10x-x-109">NAME</span>
+<!--l. 4--><p class="indent" >   <span 
+class="cmbx-10x-x-109">fit</span><span 
+class="cmbx-10x-x-109">_knn </span>- power-law fit of the inter-layer degree correlation function.
+<!--l. 4--><p class="noindent" ><span 
+class="cmbx-10x-x-109">SYNOPSYS</span>
+<!--l. 4--><p class="indent" >   <span 
+class="cmbx-10x-x-109">fit</span><span 
+class="cmbx-10x-x-109">_knn  </span><span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">filein</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">alpha</span><span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<!--l. 37--><p class="noindent" ><span 
+class="cmbx-10x-x-109">DESCRIPTION</span>
+<!--l. 37--><p class="indent" >   Perform a power-law fit of the inter-layer degree correlation function:
+   <table 
+class="equation-star"><tr><td>
+   <center class="math-display" >
+<img 
+src="mammult_doc11x.png" alt="--      1 &sum;
+q(k) = ---    q&prime;P (q&prime;|k)
+       Nq  q&prime;
+" class="math-display" ></center></td></tr></table>
+<!--l. 37--><p class="nopar" >
+<!--l. 37--><p class="indent" >   where <span 
+class="cmmi-10x-x-109">k </span>is the degree of a node on layer 1, <span 
+class="cmmi-10x-x-109">q </span>is the degree on layer 2 and
+<span 
+class="cmmi-10x-x-109">P</span>(<span 
+class="cmmi-10x-x-109">q</span><span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">k</span>) is the probability that a node with degree <span 
+class="cmmi-10x-x-109">k </span>on layer 1 has degree <span 
+class="cmmi-10x-x-109">q </span>on
+layer 2. The program assumes that <span class="overline"><span 
+class="cmmi-10x-x-109">q</span></span>(<span 
+class="cmmi-10x-x-109">k</span>) can be written in the form <span 
+class="cmmi-10x-x-109">ak</span><sup><span 
+class="cmmi-8">b</span></sup>, and
+computes the two parameters <span 
+class="cmmi-10x-x-109">a </span>and <span 
+class="cmmi-10x-x-109">b </span>through a linear fit of the log-log plot of
+<span class="overline"><span 
+class="cmmi-10x-x-109">q</span></span>(<span 
+class="cmmi-10x-x-109">k</span>).
+<!--l. 37--><p class="indent" >   The input file <span 
+class="cmti-10x-x-109">filein </span>contains a list of lines in the format:
+<!--l. 37--><p class="indent" >   &#x00A0;     <span 
+class="cmti-10x-x-109">ki qi</span>
+<!--l. 37--><p class="indent" >   where <span 
+class="cmti-10x-x-109">ki </span>is the degree of node <span 
+class="cmmi-10x-x-109">i </span>at layer 1 and <span 
+class="cmti-10x-x-109">qi </span>is the degree of node <span 
+class="cmmi-10x-x-109">i </span>at
+layer 2.
+<!--l. 37--><p class="indent" >   The second parameter <span 
+class="cmti-10x-x-109">alpha </span>is the ratio of the progression used to generate
+the exponentially-distributed bins for the log-log plot. Typical values of <span 
+class="cmti-10x-x-109">alpha </span>are
+between 1<span 
+class="cmmi-10x-x-109">.</span>1 and 2<span 
+class="cmmi-10x-x-109">.</span>0.
+<!--l. 37--><p class="indent" >   N.B.: The exponent <span 
+class="cmmi-10x-x-109">b </span>computed with this method is known to be
+inaccurate.
+                                                                     
+
+                                                                     
+<!--l. 43--><p class="noindent" ><span 
+class="cmbx-10x-x-109">OUTPUT</span>
+<!--l. 43--><p class="indent" >   The program prints on <span 
+class="cmtt-10x-x-109">stdout </span>the values of the parameters <span 
+class="cmmi-10x-x-109">a </span>and <span 
+class="cmmi-10x-x-109">b </span>of the
+power-law fit <span class="overline"><span 
+class="cmmi-10x-x-109">q</span></span>(<span 
+class="cmmi-10x-x-109">k</span>) = <span 
+class="cmmi-10x-x-109">ak</span><sup><span 
+class="cmmi-8">b</span></sup>.
+<!--l. 50--><p class="noindent" ><span 
+class="cmbx-10x-x-109">REFERENCE</span>
+<!--l. 50--><p class="indent" >   V. Nicosia, V. Latora, &#8220;Measuring and modeling correlations in multiplex
+networks&#8221;, <span 
+class="cmti-10x-x-109">Phys. Rev. E </span><span 
+class="cmbx-10x-x-109">92</span>, 032805 (2015).
+<!--l. 50--><p class="indent" >   Link to paper: <a 
+href="http://journals.aps.org/pre/abstract/10.1103/PhysRevE.92.032805" class="url" ><span 
+class="cmtt-10x-x-109">http://journals.aps.org/pre/abstract/10.1103/PhysRevE.92.032805</span></a>
+<!--l. 50--><p class="indent" >   V. Nicosia, G. Bianconi, V. Latora, M. Barthelemy, &#8220;Growing multiplex
+networks&#8221;, <span 
+class="cmti-10x-x-109">Phys. Rev. Lett. </span><span 
+class="cmbx-10x-x-109">111</span>, 058701 (2013).
+<!--l. 50--><p class="indent" >   Link to paper: <a 
+href="http://prl.aps.org/abstract/PRL/v111/i5/e058701" class="url" ><span 
+class="cmtt-10x-x-109">http://prl.aps.org/abstract/PRL/v111/i5/e058701</span></a>
+<!--l. 50--><p class="indent" >   V. Nicosia, G. Bianconi, V. Latora, M. Barthelemy, &#8220;Non-linear growth and
+condensation in multiplex networks&#8221;, <span 
+class="cmti-10x-x-109">Phys. Rev. E </span><span 
+class="cmbx-10x-x-109">90</span>, 042807 (2014).
+<!--l. 50--><p class="indent" >   Link to paper: <a 
+href="http://journals.aps.org/pre/abstract/10.1103/PhysRevE.90.042807" class="url" ><span 
+class="cmtt-10x-x-109">http://journals.aps.org/pre/abstract/10.1103/PhysRevE.90.042807</span></a>
+                                                                     
+
+                                                                     
+   <!--l. 208--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docch2.html" >next</a>] [<a 
+href="mammult_docsu34.html" >prev</a>] [<a 
+href="mammult_docsu34.html#tailmammult_docsu34.html" >prev-tail</a>] [<a 
+href="mammult_docsu35.html" >front</a>] [<a 
+href="mammult_docsu31.html#mammult_docsu35.html" >up</a>] </p></div>
+<!--l. 208--><p class="indent" >   <a 
+ id="tailmammult_docsu35.html"></a>  
+</body></html> 

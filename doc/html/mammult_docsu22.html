@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>1.1.4.0 reinforcement.py</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,index=2,3,4,5,next --> 
+<meta name="src" content="mammult_doc.tex"> 
+<meta name="date" content="2015-10-19 16:26:00"> 
+<link rel="stylesheet" type="text/css" href="mammult_doc.css"> 
+</head><body 
+>
+   <!--l. 7--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docse2.html" >next</a>] [<a 
+href="mammult_docsu21.html" >prev</a>] [<a 
+href="mammult_docsu21.html#tailmammult_docsu21.html" >prev-tail</a>] [<a 
+href="#tailmammult_docsu22.html">tail</a>] [<a 
+href="mammult_docsu19.html#mammult_docsu22.html" >up</a>] </p></div>
+   <h5 class="subsubsectionHead"><a 
+ id="x25-240001.1.4"></a><span 
+class="cmtt-10x-x-109">reinforcement.py</span></h5>
+<!--l. 7--><p class="noindent" ><span 
+class="cmbx-10x-x-109">NAME</span>
+<!--l. 7--><p class="indent" >   <span 
+class="cmbx-10x-x-109">reinforcement.py </span>- compute the probability to have a link between two
+nodes in layer 1 given their weight in layer 2.
+<!--l. 7--><p class="noindent" ><span 
+class="cmbx-10x-x-109">SYNOPSYS</span>
+<!--l. 7--><p class="indent" >   <span 
+class="cmbx-10x-x-109">reinforcement.py  </span><span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">layer1</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">layer2</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C; N</span><sub><span 
+class="cmmi-8">bins</span></sub> <span 
+class="cmmi-10x-x-109">&#x003E; &#x003C; min</span><sub><span 
+class="cmmi-8">value</span></sub> <span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<span 
+class="cmmi-10x-x-109">&#x003C; max</span><sub><span 
+class="cmmi-8">value</span></sub> <span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<!--l. 17--><p class="noindent" ><span 
+class="cmbx-10x-x-109">DESCRIPTION</span>
+<!--l. 17--><p class="indent" >   Compute and print on output the probability to have a link between two
+nodes in layer 1 given their weight in layer 2. As input are given the files <span 
+class="cmti-10x-x-109">layer1</span>,
+<span 
+class="cmti-10x-x-109">layer2</span>, the number of bins for the link weights of the second layer, the minimum
+and the maximum values of the binning.
+<!--l. 17--><p class="indent" >   The first file contains the binary edge list of layer 1, the second file contains
+the weighted edge list of layer 2. each line is in the format:
+<!--l. 17--><p class="indent" >   &#x00A0;    <span 
+class="cmti-10x-x-109">bin</span><span 
+class="cmti-10x-x-109">_min bin</span><span 
+class="cmti-10x-x-109">_max freq</span>
+<!--l. 17--><p class="indent" >   where <span 
+class="cmti-10x-x-109">bin</span><span 
+class="cmti-10x-x-109">_min </span>and <span 
+class="cmti-10x-x-109">bin</span><span 
+class="cmti-10x-x-109">_max </span>are the minimum and maximum values of the
+link weights of layer 2 in that binning, and <span 
+class="cmti-10x-x-109">freq </span>is the probability to have a link
+on layer 1 given such weight in layer 2.
+<!--l. 19--><p class="noindent" ><span 
+class="cmbx-10x-x-109">OUTPUT</span>
+<!--l. 19--><p class="indent" >   A list of lines, where the n-th line is the minimum and maximum values of
+the weight of the links in layer 2 in the n-th bin, and the frequency to have a link
+on layer 2 given that weight.
+<!--l. 21--><p class="noindent" ><span 
+class="cmbx-10x-x-109">REFERENCE</span>
+<!--l. 21--><p class="indent" >   F. Battiston, V. Nicosia, V. Latora, &#8220;Structural measures for multiplex
+networks&#8221;, <span 
+class="cmti-10x-x-109">Phys. Rev. E </span><span 
+class="cmbx-10x-x-109">89</span>, 032804 (2014).
+<!--l. 21--><p class="indent" >   Link to paper: <a 
+href="http://journals.aps.org/pre/abstract/10.1103/PhysRevE.89.032804" class="url" ><span 
+class="cmtt-10x-x-109">http://journals.aps.org/pre/abstract/10.1103/PhysRevE.89.032804</span></a>
+                                                                     
+
+                                                                     
+   <!--l. 172--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docse2.html" >next</a>] [<a 
+href="mammult_docsu21.html" >prev</a>] [<a 
+href="mammult_docsu21.html#tailmammult_docsu21.html" >prev-tail</a>] [<a 
+href="mammult_docsu22.html" >front</a>] [<a 
+href="mammult_docsu19.html#mammult_docsu22.html" >up</a>] </p></div>
+<!--l. 172--><p class="indent" >   <a 
+ id="tailmammult_docsu22.html"></a>  
+</body></html> 

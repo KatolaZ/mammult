@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>2.2.3.0 node_deg_over_time.py</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,index=2,3,4,5,next --> 
+<meta name="src" content="mammult_doc.tex"> 
+<meta name="date" content="2015-10-19 16:26:00"> 
+<link rel="stylesheet" type="text/css" href="mammult_doc.css"> 
+</head><body 
+>
+   <!--l. 4--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docse5.html" >next</a>] [<a 
+href="mammult_docsu48.html" >prev</a>] [<a 
+href="mammult_docsu48.html#tailmammult_docsu48.html" >prev-tail</a>] [<a 
+href="#tailmammult_docsu49.html">tail</a>] [<a 
+href="mammult_docsu48.html#mammult_docsu49.html" >up</a>] </p></div>
+   <h5 class="subsubsectionHead"><a 
+ id="x56-550002.2.3"></a><span 
+class="cmtt-10x-x-109">node</span><span 
+class="cmtt-10x-x-109">_deg</span><span 
+class="cmtt-10x-x-109">_over</span><span 
+class="cmtt-10x-x-109">_time.py</span></h5>
+<!--l. 4--><p class="noindent" ><span 
+class="cmbx-10x-x-109">NAME</span>
+<!--l. 4--><p class="indent" >   <span 
+class="cmbx-10x-x-109">node</span><span 
+class="cmbx-10x-x-109">_deg</span><span 
+class="cmbx-10x-x-109">_over</span><span 
+class="cmbx-10x-x-109">_time.py </span>- Time evolution of the degree of a node in a
+growing graph.
+<!--l. 4--><p class="noindent" ><span 
+class="cmbx-10x-x-109">SYNOPSYS</span>
+<!--l. 4--><p class="indent" >   <span 
+class="cmbx-10x-x-109">node</span><span 
+class="cmbx-10x-x-109">_deg</span><span 
+class="cmbx-10x-x-109">_over</span><span 
+class="cmbx-10x-x-109">_time.py  </span><span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">layer</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">arrival</span><span 
+class="cmitt-10x-x-109">_times</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">node</span><span 
+class="cmitt-10x-x-109">_id</span><span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<span 
+class="cmitt-10x-x-109">[</span><span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">node</span><span 
+class="cmitt-10x-x-109">_id</span><span 
+class="cmmi-10x-x-109">&#x003E; </span><span 
+class="cmitt-10x-x-109">...]</span>
+<!--l. 30--><p class="noindent" ><span 
+class="cmbx-10x-x-109">DESCRIPTION</span>
+<!--l. 30--><p class="indent" >   Compute the degree <span 
+class="cmmi-10x-x-109">k</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-10x-x-109">t</span>) of node <span 
+class="cmmi-10x-x-109">i </span>in a growing network as a function of
+time. The file <span 
+class="cmti-10x-x-109">layer </span>contains the edge list of the final network. Each line of the
+file is in the format:
+<!--l. 30--><p class="indent" >   &#x00A0;    <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID dest</span><span 
+class="cmti-10x-x-109">_ID</span>
+<!--l. 30--><p class="indent" >   where <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID </span>and <span 
+class="cmti-10x-x-109">dest</span><span 
+class="cmti-10x-x-109">_ID </span>are the IDs of the two endpoints of an
+edge.
+<!--l. 30--><p class="indent" >   The file <span 
+class="cmti-10x-x-109">arrival</span><span 
+class="cmti-10x-x-109">_times </span>is a list of node arrival times, in the format:
+<!--l. 30--><p class="indent" >   &#x00A0;     <span 
+class="cmti-10x-x-109">time</span><span 
+class="cmti-10x-x-109">_i node</span><span 
+class="cmti-10x-x-109">_i</span>
+<!--l. 30--><p class="indent" >   where <span 
+class="cmti-10x-x-109">time</span><span 
+class="cmti-10x-x-109">_i </span>is the time at which <span 
+class="cmti-10x-x-109">node</span><span 
+class="cmti-10x-x-109">_i </span>arrived in the graph. Notice that
+<span 
+class="cmti-10x-x-109">time</span><span 
+class="cmti-10x-x-109">_i </span>must be an integer in the range [0, N-1], where N is the total number of
+nodes in the final graph.
+<!--l. 30--><p class="indent" >   The third parameter <span 
+class="cmti-10x-x-109">node</span><span 
+class="cmti-10x-x-109">_id </span>is the ID of the node whose degree over time
+will be printed on output. If more than one <span 
+class="cmti-10x-x-109">node</span><span 
+class="cmti-10x-x-109">_id </span>is provided, the degrees over
+time of all the corresponding nodes are printed on output.
+<!--l. 48--><p class="noindent" ><span 
+class="cmbx-10x-x-109">OUTPUT</span>
+<!--l. 48--><p class="indent" >   The program prints on <span 
+class="cmtt-10x-x-109">stdout </span>a list of lines in the format:
+                                                                     
+
+                                                                     
+<!--l. 48--><p class="indent" >   &#x00A0;     <span 
+class="cmti-10x-x-109">t kit</span>
+<!--l. 48--><p class="indent" >   where <span 
+class="cmti-10x-x-109">kit </span>is the degree of node <span 
+class="cmti-10x-x-109">i </span>at time <span 
+class="cmti-10x-x-109">t</span>. The first line of output is in the
+format:
+<!--l. 48--><p class="indent" >   &#x00A0;     <span 
+class="cmti-10x-x-109">#### node</span><span 
+class="cmti-10x-x-109">_id</span>
+<!--l. 48--><p class="indent" >   where <span 
+class="cmti-10x-x-109">node</span><span 
+class="cmti-10x-x-109">_id </span>is the ID of node <span 
+class="cmti-10x-x-109">i</span>.
+<!--l. 48--><p class="indent" >   If more than one <span 
+class="cmti-10x-x-109">node</span><span 
+class="cmti-10x-x-109">_id</span>s is provided as input, the program prints the degree
+over time of all of them, sequentially.
+<!--l. 50--><p class="noindent" ><span 
+class="cmbx-10x-x-109">REFERENCE</span>
+<!--l. 50--><p class="indent" >   V. Nicosia, G. Bianconi, V. Latora, M. Barthelemy, &#8220;Growing multiplex
+networks&#8221;, <span 
+class="cmti-10x-x-109">Phys. Rev. Lett. </span><span 
+class="cmbx-10x-x-109">111</span>, 058701 (2013).
+<!--l. 50--><p class="indent" >   Link to paper: <a 
+href="http://prl.aps.org/abstract/PRL/v111/i5/e058701" class="url" ><span 
+class="cmtt-10x-x-109">http://prl.aps.org/abstract/PRL/v111/i5/e058701</span></a>
+                                                                     
+
+                                                                     
+   <!--l. 239--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docse5.html" >next</a>] [<a 
+href="mammult_docsu48.html" >prev</a>] [<a 
+href="mammult_docsu48.html#tailmammult_docsu48.html" >prev-tail</a>] [<a 
+href="mammult_docsu49.html" >front</a>] [<a 
+href="mammult_docsu48.html#mammult_docsu49.html" >up</a>] </p></div>
+<!--l. 239--><p class="indent" >   <a 
+ id="tailmammult_docsu49.html"></a>  
+</body></html> 

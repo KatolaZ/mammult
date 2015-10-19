@@ -1,0 +1,36 @@
+\myprogram{{edge\_overlap.py}}
+          {compute the edge overlap of all the edges of the
+          multiplex.}  
+          {$<$layer1$>$ [$<$layer2$>$...]}
+
+\mydescription{Compute and print on output the edge overlap $o_{ij}$ of each
+          edge of the multiplex. Given a pair of nodes $(i,j)$ that
+          are directly connected on at least one of the $M$ layers,
+          the edge overlap $o_{ij}$ is defined as:
+
+          \begin{equation*}
+          o_{ij} = \sum_{\alpha}a_{ij}\lay{\alpha}
+          \end{equation*}
+          
+  \noindent i.e., the number of layers on which the edge $(i,j)$
+  exists.
+  
+  
+  Each input file contains the (undirected) edge list of a layer, and
+  each line is in the format:
+  
+  \hspace{0.5cm}\textit{src\_ID} \textit{dest\_ID}
+  
+  where \textit{src\_ID} and \textit{dest\_ID} are the IDs of the two
+  endpoints of an edge.}
+
+\myreturn{The program prints on \texttt{stdout} a list of lines in the
+  format:
+
+  \hspace{0.5cm} \textit{ID\_1 ID\_2 overlap}
+
+  \noindent where \textit{ID\_1} and \textit{ID\_2} are the IDs of the
+  end-points of the edge, and \textit{overlap} is the number of layers
+  in which the edge exists.}
+
+\myreference{\refmetrics}

@@ -1,0 +1,45 @@
+\myprogram{{overlap\_degree.py}}
+          {compute the total (overlapping) degree of all the nodes of
+          a multiplex and the corresponding Z-score. }  {$<$layer1$>$ $<$layer2$>$ [$<$layer3$>$...]}
+
+\mydescription{Compute and print on output the total degree $o_i$ of each
+          node $i$ of a multiplex, defined as:
+
+          \begin{equation*}
+            o_{i} = \sum_{\alpha}\sum_{j}a_{ij}\lay{\alpha}
+          \end{equation*}
+
+   \noindent and the corresponding Z-score:
+
+   \begin{equation*}
+    z(o_i) = \frac{o_i - \avg{o}}{\sigma_o}
+   \end{equation*}
+
+  \noindent where $\avg{o}$ and $\sigma_o$ are, respectively, the mean
+  and the standard deviation of the total degree computed over all the
+  active nodes of the multiplex.
+
+
+  Each input file contains the (undirected) edge list of a layer, and
+  each line is in the format:
+  
+  \hspace{0.5cm}\textit{src\_ID} \textit{dest\_ID}
+  
+  where \textit{src\_ID} and \textit{dest\_ID} are the IDs of the two
+  endpoints of an edge.}
+
+\myreturn{The program prints on \texttt{stdout} a list of lines in the
+  format:
+  
+  \hspace{0.5cm} \textit{ID\_n deg\_n z\_n}
+
+  where \textit{ID\_n} is the ID of the node, \textit{deg\_n} is its
+  total degree, and \textit{z\_n} is the corresponding Z-score.
+  
+  \noindent As usual, node IDs start from zero and proceed
+  sequentially, without gaps, i.e., if a node ID is not present in any
+  of the layer files given as input, the program considers it as being
+  isolated on all the layers, and the node is omitted from the
+  output.}
+
+\myreference{\refmetrics}

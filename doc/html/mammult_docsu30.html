@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>1.2.2.0 compute_tau.py</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,index=2,3,4,5,next --> 
+<meta name="src" content="mammult_doc.tex"> 
+<meta name="date" content="2015-10-19 16:26:00"> 
+<link rel="stylesheet" type="text/css" href="mammult_doc.css"> 
+</head><body 
+>
+   <!--l. 3--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docsu31.html" >next</a>] [<a 
+href="mammult_docsu29.html" >prev</a>] [<a 
+href="mammult_docsu29.html#tailmammult_docsu29.html" >prev-tail</a>] [<a 
+href="#tailmammult_docsu30.html">tail</a>] [<a 
+href="mammult_docsu27.html#mammult_docsu30.html" >up</a>] </p></div>
+   <h5 class="subsubsectionHead"><a 
+ id="x34-330001.2.2"></a><span 
+class="cmtt-10x-x-109">compute</span><span 
+class="cmtt-10x-x-109">_tau.py</span></h5>
+<!--l. 3--><p class="noindent" ><span 
+class="cmbx-10x-x-109">NAME</span>
+<!--l. 3--><p class="indent" >   <span 
+class="cmbx-10x-x-109">compute</span><span 
+class="cmbx-10x-x-109">_tau.py </span>- compute the Kendall&#8217;s rank correlation coefficient <span 
+class="cmmi-10x-x-109">&tau;</span><sub><span 
+class="cmmi-8">b</span></sub>
+between two rankings.
+<!--l. 3--><p class="noindent" ><span 
+class="cmbx-10x-x-109">SYNOPSYS</span>
+<!--l. 3--><p class="indent" >   <span 
+class="cmbx-10x-x-109">compute</span><span 
+class="cmbx-10x-x-109">_tau.py  </span><span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">file1</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">file2</span><span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<!--l. 19--><p class="noindent" ><span 
+class="cmbx-10x-x-109">DESCRIPTION</span>
+<!--l. 19--><p class="indent" >   Compute the Kendall&#8217;s rank correlation coefficient <span 
+class="cmmi-10x-x-109">&tau;</span><sub><span 
+class="cmmi-8">b</span></sub> between two rankings
+provided in the input files <span 
+class="cmti-10x-x-109">file1 </span>and <span 
+class="cmti-10x-x-109">file2</span>. Each input file contains a list of lines,
+where the n-th line contains the value of rank of the n-th node. For instance, <span 
+class="cmti-10x-x-109">file1</span>
+and <span 
+class="cmti-10x-x-109">file2 </span>might contain the ranks of nodes induced by the degree sequences of
+two distinct layers of a multiplex.
+<!--l. 19--><p class="indent" >   However, the program is pretty general and can be used to compute
+the Kendall&#8217;s rank correlation coefficient between any generic pair of
+rankings.
+<!--l. 19--><p class="indent" >   N.B.: This implementation takes properly into account rank ties.
+<!--l. 24--><p class="noindent" ><span 
+class="cmbx-10x-x-109">OUTPUT</span>
+<!--l. 24--><p class="indent" >   The program prints on <span 
+class="cmtt-10x-x-109">stdout </span>the value of the Kendall&#8217;s rank correlation
+coefficient <span 
+class="cmmi-10x-x-109">&tau;</span><sub><span 
+class="cmmi-8">b</span></sub> between the two rankings provided as input.
+<!--l. 31--><p class="noindent" ><span 
+class="cmbx-10x-x-109">REFERENCE</span>
+<!--l. 31--><p class="indent" >   V. Nicosia, V. Latora, &#8220;Measuring and modeling correlations in multiplex
+networks&#8221;, <span 
+class="cmti-10x-x-109">Phys. Rev. E </span><span 
+class="cmbx-10x-x-109">92</span>, 032805 (2015).
+<!--l. 31--><p class="indent" >   Link to paper: <a 
+href="http://journals.aps.org/pre/abstract/10.1103/PhysRevE.92.032805" class="url" ><span 
+class="cmtt-10x-x-109">http://journals.aps.org/pre/abstract/10.1103/PhysRevE.92.032805</span></a>
+<!--l. 31--><p class="indent" >   V. Nicosia, G. Bianconi, V. Latora, M. Barthelemy, &#8220;Growing multiplex
+networks&#8221;, <span 
+class="cmti-10x-x-109">Phys. Rev. Lett. </span><span 
+class="cmbx-10x-x-109">111</span>, 058701 (2013).
+<!--l. 31--><p class="indent" >   Link to paper: <a 
+href="http://prl.aps.org/abstract/PRL/v111/i5/e058701" class="url" ><span 
+class="cmtt-10x-x-109">http://prl.aps.org/abstract/PRL/v111/i5/e058701</span></a>
+<!--l. 31--><p class="indent" >   V. Nicosia, G. Bianconi, V. Latora, M. Barthelemy, &#8220;Non-linear growth and
+condensation in multiplex networks&#8221;, <span 
+class="cmti-10x-x-109">Phys. Rev. E </span><span 
+class="cmbx-10x-x-109">90</span>, 042807 (2014).
+<!--l. 31--><p class="indent" >   Link to paper: <a 
+href="http://journals.aps.org/pre/abstract/10.1103/PhysRevE.90.042807" class="url" ><span 
+class="cmtt-10x-x-109">http://journals.aps.org/pre/abstract/10.1103/PhysRevE.90.042807</span></a>
+                                                                     
+
+                                                                     
+   <!--l. 194--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docsu31.html" >next</a>] [<a 
+href="mammult_docsu29.html" >prev</a>] [<a 
+href="mammult_docsu29.html#tailmammult_docsu29.html" >prev-tail</a>] [<a 
+href="mammult_docsu30.html" >front</a>] [<a 
+href="mammult_docsu27.html#mammult_docsu30.html" >up</a>] </p></div>
+<!--l. 194--><p class="indent" >   <a 
+ id="tailmammult_docsu30.html"></a>  
+</body></html> 

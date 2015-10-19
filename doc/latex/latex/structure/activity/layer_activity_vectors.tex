@@ -1,0 +1,27 @@
+\myprogram{{layer\_activity\_vectors.py}}
+          {compute the activity vectors of all the layers of a multiplex.}
+          {$<$layer1$>$ [$<$layer2$>$ ...]}
+
+\mydescription{Compute and print on output the activity vectors of the
+  layers of a multiplex network, where the layers are given as input
+  in the files \textit{layer1}, \textit{layer2}, etc.
+  
+  Each input file contains the (undirected) edge list of a layer, and
+  each line is in the format:
+  
+  \hspace{0.5cm}\textit{src\_ID} \textit{dest\_ID}
+  
+  where \textit{src\_ID} and \textit{dest\_ID} are the IDs of the two
+  endpoints of an edge.}
+
+\myreturn{The program prints on \texttt{stdout} a list of lines, where
+  the n-th line contains the activity vector of the n-th layer, i.e. a
+  bit-string where each bit is set to ``1'' if the corresponding node
+  is active on the n-th layer, and to ``0'' otherwise.
+ 
+  \noindent As usual, node IDs start from zero and proceed
+  sequentially, without gaps, i.e., if a node ID is not present in any
+  of the layer files given as input, the program considers it as being
+  isolated on all the layers.}
+
+\myreference{\refcorrelations}

@@ -1,0 +1,32 @@
+\myprogram{{degs\_to\_binary.py}}
+          {compute the activity vectors of all the nodes of a multiplex.}
+          {$<$degree\_vectors$>$}
+
+\mydescription{Take a file which contains, on the n-th line, the degrees at each
+ layer of the n-th node, (e.g., the result of the
+ script \texttt{node\_degree\_vectors.py}), in the format:
+
+ \hspace{0.5cm}\textit{noden\_deg\_lay1 noden\_deg\_lay2 ... noden\_deg\_layM}
+
+ \noindent and compute the corresponding node activity bit-strings,
+ where a "1" signals the presence of the node on that layer, while a
+ zero indicates its absence.
+}
+
+\myreturn{The program returns on \texttt{stdout} a list of lines,
+  where the n-th line is the activity bit-string of the n-th
+  node. Additionally, the program prints on \texttt{stderr} the
+  distribution of all activity bit-strings, in the format:
+
+  \hspace{0.5cm}\textit{Bn Bit-string count}
+
+  \noindent Where \textit{B} is the number of ones in the activity
+  bit-string (i.e., the node-activity associated to that activity
+  bit-string), \textit{Bit-string} is the activity bit-string
+  and \textit{count} is the number of times that particular activity
+  bit-string appears in the multiplex.}
+  
+
+
+\myreference{\refcorrelations}
+

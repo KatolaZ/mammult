@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>1.1.4.0 edge_overlap.py</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,index=2,3,4,5,next --> 
+<meta name="src" content="mammult_doc.tex"> 
+<meta name="date" content="2015-10-19 16:26:00"> 
+<link rel="stylesheet" type="text/css" href="mammult_doc.css"> 
+</head><body 
+>
+   <!--l. 4--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docsu21.html" >next</a>] [<a 
+href="mammult_docsu19.html" >prev</a>] [<a 
+href="mammult_docsu19.html#tailmammult_docsu19.html" >prev-tail</a>] [<a 
+href="#tailmammult_docsu20.html">tail</a>] [<a 
+href="mammult_docsu19.html#mammult_docsu20.html" >up</a>] </p></div>
+   <h5 class="subsubsectionHead"><a 
+ id="x23-220001.1.4"></a><span 
+class="cmtt-10x-x-109">edge</span><span 
+class="cmtt-10x-x-109">_overlap.py</span></h5>
+<!--l. 4--><p class="noindent" ><span 
+class="cmbx-10x-x-109">NAME</span>
+<!--l. 4--><p class="indent" >   <span 
+class="cmbx-10x-x-109">edge</span><span 
+class="cmbx-10x-x-109">_overlap.py </span>- compute the edge overlap of all the edges of the
+multiplex.
+<!--l. 4--><p class="noindent" ><span 
+class="cmbx-10x-x-109">SYNOPSYS</span>
+<!--l. 4--><p class="indent" >   <span 
+class="cmbx-10x-x-109">edge</span><span 
+class="cmbx-10x-x-109">_overlap.py  </span><span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">layer1</span><span 
+class="cmmi-10x-x-109">&#x003E; </span><span 
+class="cmitt-10x-x-109">[</span><span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">layer2</span><span 
+class="cmmi-10x-x-109">&#x003E;</span><span 
+class="cmitt-10x-x-109">...]</span>
+<!--l. 25--><p class="noindent" ><span 
+class="cmbx-10x-x-109">DESCRIPTION</span>
+<!--l. 25--><p class="indent" >   Compute and print on output the edge overlap <span 
+class="cmmi-10x-x-109">o</span><sub><span 
+class="cmmi-8">ij</span></sub> of each edge of the
+multiplex. Given a pair of nodes (<span 
+class="cmmi-10x-x-109">i,j</span>) that are directly connected on at least one
+of the <span 
+class="cmmi-10x-x-109">M </span>layers, the edge overlap <span 
+class="cmmi-10x-x-109">o</span><sub><span 
+class="cmmi-8">ij</span></sub> is defined as:
+   <table 
+class="equation-star"><tr><td>
+   <center class="math-display" >
+<img 
+src="mammult_doc3x.png" alt="     &sum;    [&alpha;]
+oij =    aij
+      &alpha;
+                                                                     
+
+                                                                     
+" class="math-display" ></center></td></tr></table>
+<!--l. 25--><p class="nopar" >
+<!--l. 25--><p class="noindent" >i.e., the number of layers on which the edge (<span 
+class="cmmi-10x-x-109">i,j</span>) exists.
+<!--l. 25--><p class="indent" >   Each input file contains the (undirected) edge list of a layer, and each line is
+in the format:
+<!--l. 25--><p class="indent" >   &#x00A0;    <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID dest</span><span 
+class="cmti-10x-x-109">_ID</span>
+<!--l. 25--><p class="indent" >   where <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID </span>and <span 
+class="cmti-10x-x-109">dest</span><span 
+class="cmti-10x-x-109">_ID </span>are the IDs of the two endpoints of an
+edge.
+<!--l. 34--><p class="noindent" ><span 
+class="cmbx-10x-x-109">OUTPUT</span>
+<!--l. 34--><p class="indent" >   The program prints on <span 
+class="cmtt-10x-x-109">stdout </span>a list of lines in the format:
+<!--l. 34--><p class="indent" >   &#x00A0;     <span 
+class="cmti-10x-x-109">ID</span><span 
+class="cmti-10x-x-109">_1 ID</span><span 
+class="cmti-10x-x-109">_2 overlap</span>
+<!--l. 34--><p class="noindent" >where <span 
+class="cmti-10x-x-109">ID</span><span 
+class="cmti-10x-x-109">_1 </span>and <span 
+class="cmti-10x-x-109">ID</span><span 
+class="cmti-10x-x-109">_2 </span>are the IDs of the end-points of the edge, and <span 
+class="cmti-10x-x-109">overlap </span>is
+the number of layers in which the edge exists.
+<!--l. 36--><p class="noindent" ><span 
+class="cmbx-10x-x-109">REFERENCE</span>
+<!--l. 36--><p class="indent" >   F. Battiston, V. Nicosia, V. Latora, &#8220;Structural measures for multiplex
+networks&#8221;, <span 
+class="cmti-10x-x-109">Phys. Rev. E </span><span 
+class="cmbx-10x-x-109">89</span>, 032804 (2014).
+<!--l. 36--><p class="indent" >   Link to paper: <a 
+href="http://journals.aps.org/pre/abstract/10.1103/PhysRevE.89.032804" class="url" ><span 
+class="cmtt-10x-x-109">http://journals.aps.org/pre/abstract/10.1103/PhysRevE.89.032804</span></a>
+                                                                     
+
+                                                                     
+   <!--l. 3--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docsu21.html" >next</a>] [<a 
+href="mammult_docsu19.html" >prev</a>] [<a 
+href="mammult_docsu19.html#tailmammult_docsu19.html" >prev-tail</a>] [<a 
+href="mammult_docsu20.html" >front</a>] [<a 
+href="mammult_docsu19.html#mammult_docsu20.html" >up</a>] </p></div>
+<!--l. 3--><p class="indent" >   <a 
+ id="tailmammult_docsu20.html"></a>  
+</body></html> 

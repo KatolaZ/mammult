@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>1.1.1.0 node_activity_vectors.py</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,index=2,3,4,5,next --> 
+<meta name="src" content="mammult_doc.tex"> 
+<meta name="date" content="2015-10-19 16:26:00"> 
+<link rel="stylesheet" type="text/css" href="mammult_doc.css"> 
+</head><body 
+>
+   <!--l. 3--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docsu5.html" >next</a>] [<a 
+href="mammult_docsu3.html" >prev</a>] [<a 
+href="mammult_docsu3.html#tailmammult_docsu3.html" >prev-tail</a>] [<a 
+href="#tailmammult_docsu4.html">tail</a>] [<a 
+href="mammult_docsu1.html#mammult_docsu4.html" >up</a>] </p></div>
+   <h5 class="subsubsectionHead"><a 
+ id="x7-60001.1.1"></a><span 
+class="cmtt-10x-x-109">node</span><span 
+class="cmtt-10x-x-109">_activity</span><span 
+class="cmtt-10x-x-109">_vectors.py</span></h5>
+<!--l. 3--><p class="noindent" ><span 
+class="cmbx-10x-x-109">NAME</span>
+<!--l. 3--><p class="indent" >   <span 
+class="cmbx-10x-x-109">node</span><span 
+class="cmbx-10x-x-109">_activity</span><span 
+class="cmbx-10x-x-109">_vectors.py </span>- compute the activity vectors of all the nodes of
+a multiplex.
+<!--l. 3--><p class="noindent" ><span 
+class="cmbx-10x-x-109">SYNOPSYS</span>
+<!--l. 3--><p class="indent" >   <span 
+class="cmbx-10x-x-109">node</span><span 
+class="cmbx-10x-x-109">_activity</span><span 
+class="cmbx-10x-x-109">_vectors.py  </span><span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">layer1</span><span 
+class="cmmi-10x-x-109">&#x003E; </span><span 
+class="cmitt-10x-x-109">[</span><span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">layer2</span><span 
+class="cmmi-10x-x-109">&#x003E; </span><span 
+class="cmitt-10x-x-109">...]</span>
+<!--l. 15--><p class="noindent" ><span 
+class="cmbx-10x-x-109">DESCRIPTION</span>
+<!--l. 15--><p class="indent" >   Compute and print on output the activity vectors of the nodes of a
+multiplex network, whose layers are given as input in the files <span 
+class="cmti-10x-x-109">layer1</span>, <span 
+class="cmti-10x-x-109">layer2</span>,
+etc.
+<!--l. 15--><p class="indent" >   Each input file contains the (undirected) edge list of a layer, and each line is
+in the format:
+<!--l. 15--><p class="indent" >   &#x00A0;    <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID dest</span><span 
+class="cmti-10x-x-109">_ID</span>
+<!--l. 15--><p class="indent" >   where <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID </span>and <span 
+class="cmti-10x-x-109">dest</span><span 
+class="cmti-10x-x-109">_ID </span>are the IDs of the two endpoints of an
+edge.
+<!--l. 26--><p class="noindent" ><span 
+class="cmbx-10x-x-109">OUTPUT</span>
+<!--l. 26--><p class="indent" >   The program prints on <span 
+class="cmtt-10x-x-109">stdout </span>a list of lines, where the n-th line contains
+the activity vector of the n-th node, i.e. a bit-string where each bit is
+set to &#8220;1&#8221; if the node is active on the corresponding layer, and to &#8220;0&#8221;
+otherwise.
+<!--l. 26--><p class="noindent" >As usual, node IDs start from zero and proceed sequentially, without gaps, i.e., if
+a node ID is not present in any of the layer files given as input, the program
+considers it as being isolated on all the layers, and will print on output a
+bit-string of zeros.
+<!--l. 28--><p class="noindent" ><span 
+class="cmbx-10x-x-109">REFERENCE</span>
+<!--l. 28--><p class="indent" >   V. Nicosia, V. Latora, &#8220;Measuring and modeling correlations in multiplex
+networks&#8221;, <span 
+class="cmti-10x-x-109">Phys. Rev. E </span><span 
+class="cmbx-10x-x-109">92</span>, 032805 (2015).
+<!--l. 28--><p class="indent" >   Link to paper: <a 
+href="http://journals.aps.org/pre/abstract/10.1103/PhysRevE.92.032805" class="url" ><span 
+class="cmtt-10x-x-109">http://journals.aps.org/pre/abstract/10.1103/PhysRevE.92.032805</span></a>
+                                                                     
+
+                                                                     
+   <!--l. 3--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docsu5.html" >next</a>] [<a 
+href="mammult_docsu3.html" >prev</a>] [<a 
+href="mammult_docsu3.html#tailmammult_docsu3.html" >prev-tail</a>] [<a 
+href="mammult_docsu4.html" >front</a>] [<a 
+href="mammult_docsu1.html#mammult_docsu4.html" >up</a>] </p></div>
+<!--l. 3--><p class="indent" >   <a 
+ id="tailmammult_docsu4.html"></a>  
+</body></html> 

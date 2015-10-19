@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>1.2.3.0 dump_k_q</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,index=2,3,4,5,next --> 
+<meta name="src" content="mammult_doc.tex"> 
+<meta name="date" content="2015-10-19 16:26:00"> 
+<link rel="stylesheet" type="text/css" href="mammult_doc.css"> 
+</head><body 
+>
+   <!--l. 3--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docsu33.html" >next</a>] [<a 
+href="mammult_docsu31.html" >prev</a>] [<a 
+href="mammult_docsu31.html#tailmammult_docsu31.html" >prev-tail</a>] [<a 
+href="#tailmammult_docsu32.html">tail</a>] [<a 
+href="mammult_docsu31.html#mammult_docsu32.html" >up</a>] </p></div>
+   <h5 class="subsubsectionHead"><a 
+ id="x36-350001.2.3"></a><span 
+class="cmtt-10x-x-109">dump</span><span 
+class="cmtt-10x-x-109">_k</span><span 
+class="cmtt-10x-x-109">_q</span></h5>
+<!--l. 3--><p class="noindent" ><span 
+class="cmbx-10x-x-109">NAME</span>
+<!--l. 3--><p class="indent" >   <span 
+class="cmbx-10x-x-109">dump</span><span 
+class="cmbx-10x-x-109">_k</span><span 
+class="cmbx-10x-x-109">_q </span>- compute the degree sequences of two layers of a multiplex.
+<!--l. 3--><p class="noindent" ><span 
+class="cmbx-10x-x-109">SYNOPSYS</span>
+<!--l. 3--><p class="indent" >   <span 
+class="cmbx-10x-x-109">dump</span><span 
+class="cmbx-10x-x-109">_k</span><span 
+class="cmbx-10x-x-109">_q  </span><span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">layer1</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">layer2</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">pairing</span><span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<!--l. 26--><p class="noindent" ><span 
+class="cmbx-10x-x-109">DESCRIPTION</span>
+<!--l. 26--><p class="indent" >   Compute and dump on <span 
+class="cmtt-10x-x-109">stdout </span>the degree sequences of two layers of a
+multiplex. The input files <span 
+class="cmti-10x-x-109">layer1 </span>and <span 
+class="cmti-10x-x-109">layer2 </span>contain the (undirected) edge lists of
+the two layers, and each line is in the format:
+<!--l. 26--><p class="indent" >   &#x00A0;    <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID dest</span><span 
+class="cmti-10x-x-109">_ID</span>
+<!--l. 26--><p class="indent" >   where <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID </span>and <span 
+class="cmti-10x-x-109">dest</span><span 
+class="cmti-10x-x-109">_ID </span>are the IDs of the two endpoints of an
+edge.
+<!--l. 26--><p class="indent" >   The third file <span 
+class="cmti-10x-x-109">pairing </span>is a list of lines in the format:
+<!--l. 26--><p class="indent" >   &#x00A0;     <span 
+class="cmti-10x-x-109">IDL1 IDL2</span>
+<!--l. 26--><p class="indent" >   where <span 
+class="cmti-10x-x-109">IDL1 </span>is the ID of a node on layer 1 and <span 
+class="cmti-10x-x-109">IDL2 </span>is the ID of the same
+node on layer 2. For instance, the line:
+<!--l. 26--><p class="indent" >   &#x00A0;     <span 
+class="cmti-10x-x-109">5 27</span>
+<!--l. 26--><p class="indent" >   indicates that node 5 on layer 1 has ID 27 on layer 2.
+<!--l. 35--><p class="noindent" ><span 
+class="cmbx-10x-x-109">OUTPUT</span>
+                                                                     
+
+                                                                     
+<!--l. 35--><p class="indent" >   The program prints on <span 
+class="cmtt-10x-x-109">stdout </span>the degree of each node on the two layers, in
+the format:
+<!--l. 35--><p class="indent" >   &#x00A0;     <span 
+class="cmti-10x-x-109">ki qi</span>
+<!--l. 35--><p class="indent" >   where <span 
+class="cmti-10x-x-109">ki </span>is the degree of node <span 
+class="cmti-10x-x-109">i </span>on layer 1 and <span 
+class="cmti-10x-x-109">qi </span>is the degree of node <span 
+class="cmti-10x-x-109">i </span>on
+layer 2.
+<!--l. 42--><p class="noindent" ><span 
+class="cmbx-10x-x-109">REFERENCE</span>
+<!--l. 42--><p class="indent" >   V. Nicosia, V. Latora, &#8220;Measuring and modeling correlations in multiplex
+networks&#8221;, <span 
+class="cmti-10x-x-109">Phys. Rev. E </span><span 
+class="cmbx-10x-x-109">92</span>, 032805 (2015).
+<!--l. 42--><p class="indent" >   Link to paper: <a 
+href="http://journals.aps.org/pre/abstract/10.1103/PhysRevE.92.032805" class="url" ><span 
+class="cmtt-10x-x-109">http://journals.aps.org/pre/abstract/10.1103/PhysRevE.92.032805</span></a>
+<!--l. 42--><p class="indent" >   V. Nicosia, G. Bianconi, V. Latora, M. Barthelemy, &#8220;Growing multiplex
+networks&#8221;, <span 
+class="cmti-10x-x-109">Phys. Rev. Lett. </span><span 
+class="cmbx-10x-x-109">111</span>, 058701 (2013).
+<!--l. 42--><p class="indent" >   Link to paper: <a 
+href="http://prl.aps.org/abstract/PRL/v111/i5/e058701" class="url" ><span 
+class="cmtt-10x-x-109">http://prl.aps.org/abstract/PRL/v111/i5/e058701</span></a>
+<!--l. 42--><p class="indent" >   V. Nicosia, G. Bianconi, V. Latora, M. Barthelemy, &#8220;Non-linear growth and
+condensation in multiplex networks&#8221;, <span 
+class="cmti-10x-x-109">Phys. Rev. E </span><span 
+class="cmbx-10x-x-109">90</span>, 042807 (2014).
+<!--l. 42--><p class="indent" >   Link to paper: <a 
+href="http://journals.aps.org/pre/abstract/10.1103/PhysRevE.90.042807" class="url" ><span 
+class="cmtt-10x-x-109">http://journals.aps.org/pre/abstract/10.1103/PhysRevE.90.042807</span></a>
+                                                                     
+
+                                                                     
+   <!--l. 3--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docsu33.html" >next</a>] [<a 
+href="mammult_docsu31.html" >prev</a>] [<a 
+href="mammult_docsu31.html#tailmammult_docsu31.html" >prev-tail</a>] [<a 
+href="mammult_docsu32.html" >front</a>] [<a 
+href="mammult_docsu31.html#mammult_docsu32.html" >up</a>] </p></div>
+<!--l. 3--><p class="indent" >   <a 
+ id="tailmammult_docsu32.html"></a>  
+</body></html> 

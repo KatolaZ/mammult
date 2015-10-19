@@ -1,0 +1,24 @@
+%%%
+%%% Layer activity
+%%%
+
+\myprogram{{statdistr2}}
+          {compute the stationary distribution of additive, multiplicative and intensive biased walks in a multiplex with $2$ layers.}
+          {$<$layer1$>$ $<$layer2$>$ $<overlapping network>$ $<$N$>$ $b_1$ $b_2$}
+
+\mydescription{Compute and print the stationary distribution of additive, multiplicative and intensive biased walks in a multiplex with $2$ layers.
+  Files \textit{layer1}, \textit{layer2}, contain the (undirected) edge list of the two layer, and each
+  line is in the format:
+  
+  \hspace{0.5cm}\textit{src\_ID} \textit{dest\_ID}
+  
+  where \textit{src\_ID} and \textit{dest\_ID} are the IDs of the two
+  endpoints of an edge.
+
+  The file \textit{overlapping network} has also a third column indicating the number of times two nodes are connected across all layers.
+
+ $N$ is the number of nodes, $b_1$ is the first bias exponent (the bias exponent for layer $1$ for additive and multiplicative walks, the bias exponent on the participation coefficient for intensive walks), $b_2$ is the second bias exponent (the bias exponent for layer $1$ for additive and multiplicative walks, the bias exponent on the participation coefficient for intensive walks).} 
+
+\myreturn{N lines. In the n-th line we report the node ID, the stationary distribution of that node for additive walks with exponents $b_1$ and $b_2$, the stationary distribution for multiplicative walks with exponents $b_1$ and $b_2$, the stationary distribution for multiplicative walks with exponents $b_1$ and $b_2$, the values of the bias exponents $b_1$ and $b_2$.}
+
+\myreference{\refbiased}

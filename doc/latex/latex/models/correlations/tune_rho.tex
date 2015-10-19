@@ -1,0 +1,45 @@
+\myprogram{{tune\_rho}}
+          {Construct a multiplex with prescribed inter-layer correlations.} 
+          {$<$rank1$>$  $<$rank2$>$ $<$rho$>$ $<$eps$>$ $<$beta$>$ [RND|NAT|INV]}
+
+\mydescription{This programs tunes the inter-layer degree correlation
+          coefficient $\rho$ (Spearman's rank correlation) of two
+          layers, by adjusting the inter-layer pairing of nodes. The
+          files \textit{rank1} and \textit{rank2} are the rankings of
+          nodes in the first and second layer, where the n-th line of
+          the file contains the rank of the n-th node (the highest
+          ranked node has rank equal to 1).
+
+          The parameter \textit{rho} is the desired value of the
+          Spearman's rank correlation coefficient, while \textit{eps}
+          is the accuracy of \textit{rho}. For instance,
+          if \textit{rho} is set equal to -0.25 and \textit{eps} is
+          equal to 0.0001, the program stops when the configuration of
+          node pairing corresponds to a value of $\rho$ which differs
+          from -0.25 by less than 0.0001.
+
+          The parameter \textit{beta} is the typical inverse
+          temperature of simulated annealing. 
+
+          If no other parameter is specified, or if the last parameter
+          is \texttt{RND}, the program starts from a random pairing of
+          nodes. If the last parameter is \texttt{NAT} then the
+          program assumes that the initial pairing is the natural one,
+          where the nodes have the same ID on both layers. Finally,
+          if \texttt{INV} is specified, the initial pairing is the
+          inverse pairing, i.e. the one where node 0 on layer 1 is
+          paired with node N-1 on layer 2, and so on.
+
+ }
+
+
+\myreturn{The program prints on \texttt{stdout} a pairing, i.e. a list
+of lines in the format:
+
+\hspace{0.5cm} \textit{IDL1 IDL2}
+
+where \textit{IDL1} is the ID of the node on layer 1 and \textit{IDL2}
+is the corresponding ID of the same node on layer 2.
+}
+
+\myreference{\refcorrelations}

@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>1.1.3.0 cartography_from_layers.py</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,index=2,3,4,5,next --> 
+<meta name="src" content="mammult_doc.tex"> 
+<meta name="date" content="2015-10-19 16:26:00"> 
+<link rel="stylesheet" type="text/css" href="mammult_doc.css"> 
+</head><body 
+>
+   <!--l. 4--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docsu17.html" >next</a>] [<a 
+href="mammult_docsu15.html" >prev</a>] [<a 
+href="mammult_docsu15.html#tailmammult_docsu15.html" >prev-tail</a>] [<a 
+href="#tailmammult_docsu16.html">tail</a>] [<a 
+href="mammult_docsu14.html#mammult_docsu16.html" >up</a>] </p></div>
+   <h5 class="subsubsectionHead"><a 
+ id="x19-180001.1.3"></a><span 
+class="cmtt-10x-x-109">cartography</span><span 
+class="cmtt-10x-x-109">_from</span><span 
+class="cmtt-10x-x-109">_layers.py</span></h5>
+<!--l. 4--><p class="noindent" ><span 
+class="cmbx-10x-x-109">NAME</span>
+<!--l. 4--><p class="indent" >   <span 
+class="cmbx-10x-x-109">cartography</span><span 
+class="cmbx-10x-x-109">_from</span><span 
+class="cmbx-10x-x-109">_layers.py </span>- compute the total degree and the multiplex
+participation coefficient of all the nodes of a multiplex.
+<!--l. 4--><p class="noindent" ><span 
+class="cmbx-10x-x-109">SYNOPSYS</span>
+<!--l. 4--><p class="indent" >   <span 
+class="cmbx-10x-x-109">cartography</span><span 
+class="cmbx-10x-x-109">_from</span><span 
+class="cmbx-10x-x-109">_layers.py  </span><span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">layer1</span><span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span><span 
+class="cmitt-10x-x-109">layer2</span><span 
+class="cmmi-10x-x-109">&#x003E; </span><span 
+class="cmitt-10x-x-109">[</span><span 
+class="cmmi-10x-x-109">&#x003C;</span><span 
+class="cmitt-10x-x-109">layer3</span><span 
+class="cmmi-10x-x-109">&#x003E;</span><span 
+class="cmitt-10x-x-109">...]</span>
+<!--l. 24--><p class="noindent" ><span 
+class="cmbx-10x-x-109">DESCRIPTION</span>
+<!--l. 24--><p class="indent" >   Compute and print on output the total degree and the multiplex
+participation coefficient <span 
+class="cmmi-10x-x-109">P</span><sub><span 
+class="cmmi-8">i</span></sub> for each node <span 
+class="cmmi-10x-x-109">i </span>of a multiplex. The participation
+coefficient is defined as:
+   <table 
+class="equation-star"><tr><td>
+   <center class="math-display" >
+<img 
+src="mammult_doc2x.png" alt="           [     M   [&alpha;] ]
+     -M----     &sum;   ki--2
+Pi = M &minus; 1  1 &minus;    ( oi )
+                &alpha;=1
+" class="math-display" ></center></td></tr></table>
+<!--l. 24--><p class="nopar" >
+<!--l. 24--><p class="noindent" >Note that <span 
+class="cmmi-10x-x-109">P</span><sub><span 
+class="cmmi-8">i</span></sub> takes values in [0<span 
+class="cmmi-10x-x-109">,</span>1], where <span 
+class="cmmi-10x-x-109">P</span><sub><span 
+class="cmmi-8">i</span></sub> = 0 if and only if node <span 
+class="cmmi-10x-x-109">i </span>is active on
+exactly one of the layers, while <span 
+class="cmmi-10x-x-109">P</span><sub><span 
+class="cmmi-8">i</span></sub> = 1 if node <span 
+class="cmmi-10x-x-109">i </span>has equal degree on all the <span 
+class="cmmi-10x-x-109">M</span>
+layers.
+<!--l. 24--><p class="indent" >   Each input file contains the (undirected) edge list of a layer, and each line is
+in the format:
+<!--l. 24--><p class="indent" >   &#x00A0;    <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID dest</span><span 
+class="cmti-10x-x-109">_ID</span>
+<!--l. 24--><p class="indent" >   where <span 
+class="cmti-10x-x-109">src</span><span 
+class="cmti-10x-x-109">_ID </span>and <span 
+class="cmti-10x-x-109">dest</span><span 
+class="cmti-10x-x-109">_ID </span>are the IDs of the two endpoints of an
+edge.
+<!--l. 43--><p class="noindent" ><span 
+class="cmbx-10x-x-109">OUTPUT</span>
+<!--l. 43--><p class="indent" >   The program prints on <span 
+class="cmtt-10x-x-109">stdout </span>a list of lines in the format:
+                                                                     
+
+                                                                     
+<!--l. 43--><p class="indent" >   &#x00A0;     <span 
+class="cmti-10x-x-109">deg</span><span 
+class="cmti-10x-x-109">_n P</span><span 
+class="cmti-10x-x-109">_n col</span><span 
+class="cmti-10x-x-109">_n</span>
+<!--l. 43--><p class="indent" >   where <span 
+class="cmti-10x-x-109">deg</span><span 
+class="cmti-10x-x-109">_n </span>is the total degree of node <span 
+class="cmmi-10x-x-109">n</span>, <span 
+class="cmti-10x-x-109">P</span><span 
+class="cmti-10x-x-109">_n </span>is the participation coefficient
+of node <span 
+class="cmmi-10x-x-109">n </span>and <span 
+class="cmti-10x-x-109">col </span>is the integer representation of the activity bitstring of node <span 
+class="cmmi-10x-x-109">n</span>,
+which is a number between 0 and 2<sup><span 
+class="cmmi-8">M</span></sup> <span 
+class="cmsy-10x-x-109">&minus; </span>1. The field <span 
+class="cmti-10x-x-109">col </span>might be useful for the
+visualisation of the multiplex cartography diagram, where it would be
+possible to associate different colors to nodes having different node activity
+patterns.
+<!--l. 43--><p class="noindent" >As usual, node IDs start from zero and proceed sequentially, without gaps, i.e.,
+if a node ID is not present in any of the layer files given as input, the
+program considers it as being isolated on all the layers, and is set to
+zero.
+<!--l. 45--><p class="noindent" ><span 
+class="cmbx-10x-x-109">REFERENCE</span>
+<!--l. 45--><p class="indent" >   F. Battiston, V. Nicosia, V. Latora, &#8220;Structural measures for multiplex
+networks&#8221;, <span 
+class="cmti-10x-x-109">Phys. Rev. E </span><span 
+class="cmbx-10x-x-109">89</span>, 032804 (2014).
+<!--l. 45--><p class="indent" >   Link to paper: <a 
+href="http://journals.aps.org/pre/abstract/10.1103/PhysRevE.89.032804" class="url" ><span 
+class="cmtt-10x-x-109">http://journals.aps.org/pre/abstract/10.1103/PhysRevE.89.032804</span></a>
+                                                                     
+
+                                                                     
+   <!--l. 3--><div class="crosslinks"><p class="noindent">[<a 
+href="mammult_docsu17.html" >next</a>] [<a 
+href="mammult_docsu15.html" >prev</a>] [<a 
+href="mammult_docsu15.html#tailmammult_docsu15.html" >prev-tail</a>] [<a 
+href="mammult_docsu16.html" >front</a>] [<a 
+href="mammult_docsu14.html#mammult_docsu16.html" >up</a>] </p></div>
+<!--l. 3--><p class="indent" >   <a 
+ id="tailmammult_docsu16.html"></a>  
+</body></html> 

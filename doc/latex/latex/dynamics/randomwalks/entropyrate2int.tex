@@ -1,0 +1,24 @@
+%%%
+%%% Layer activity
+%%%
+
+\myprogram{{entropyrate2int}}
+          {compute the entropy rate of intensive biased walks in a multiplex with $2$ layers.}
+          {$<$layer1$>$ $<$layer2$>$ $<overlapping network>$ $<$N$>$ $b_1$ $b_2$}
+
+\mydescription{Compute and print the entropy rate of an intensive biased walks in a multiplex with $2$ layers and bias parameters $b_p$ and $b_o$.
+  Files \textit{layer1}, \textit{layer2}, contain the (undirected) edge list of the two layer, and each
+  line is in the format:
+  
+  \hspace{0.5cm}\textit{src\_ID} \textit{dest\_ID}
+  
+  where \textit{src\_ID} and \textit{dest\_ID} are the IDs of the two
+  endpoints of an edge.
+
+  The file \textit{overlapping network} has also a third column indicating the number of times two nodes are connected across all layers.
+
+ $N$ is the number of nodes, $b_p$ is the biased exponent on the participation coefficient, $b_o$ is the biased exponent on the overlapping degree.} 
+
+\myreturn{One line, reporting the value of the entropy rate $h$ of an intensive biased random walks with $b_p$ and $b_o$ as bias exponents, $b_p$ and $b_o$.}
+
+\myreference{\refbiased}

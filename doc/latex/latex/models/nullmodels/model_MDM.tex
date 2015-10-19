@@ -1,0 +1,37 @@
+\myprogram{{model\_MDM.py}}
+          {Multi-activity Deterministic Model.} 
+          {$<$Bi\_file$>$ $<$M$>$}
+
+\mydescription{This is the Multi-activity Deterministic Model (MDM). 
+           In this model each node $i$ is considered active if it was
+           active in the reference multiplex, maintains the same value
+           of node activity $B_i$ (i.e., the number of layers in which
+           it was active) and is associated an activity vector sampled
+           uniformly at random from the $M\choose{B_i}$ possible
+           activity vectors with $B_i$ non-null entries.
+
+          The file \textit{Bi\_file}  is in the format:
+          
+          \hspace{0.5cm} \textit{Bi N(Bi)}
+          
+          where \textit{Bi} is a value of node activity
+          and \textit{N(Bi)} is the number of nodes which had node
+          activity equaly to \textit{Bi} in the reference multiplex.
+          
+          The parameter \textit{M} is the number of layers in the
+          multiplex.
+}         
+
+
+\myreturn{The program prints on \texttt{stdout} a distribution of
+          bit-strings, in the format:
+
+          \hspace{0.5cm} \textit{Bi bitstring count}
+
+          where \textit{bitstring} is the activity
+          bitstring, \textit{Bi} is the number of non-zero entries
+          of \textit{bitstring} and \textit{count} is the number of
+          times that \textit{bitstrings} appear in the null model.}
+
+
+\myreference{\refcorrelations}

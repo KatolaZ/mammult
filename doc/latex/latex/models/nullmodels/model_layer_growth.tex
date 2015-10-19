@@ -1,0 +1,46 @@
+\myprogram{{model\_layer\_growth.py}}
+          {Layer growth with preferential activation model.} 
+          {$<$layer\_N\_file$>$ $<$N$>$ $<$M0$>$ $<$A$>$ [RND]}
+
+\mydescription{This is the model of layer growth with preferential
+          node activation. In this model an entire new layer arrives
+          at time $t$ and a number of nodes $N_t$ is activated ($N\_t$
+          is equal to the number of nodes active on that layer in the
+          reference multiplex). Then, each node $i$ of the new layer
+          is activated with a probability:
+
+          \begin{equation*}
+          P_i(t) \propto A + B_i(t)
+          \end{equation*}
+
+          where $B_i(t)$ is the activity of node $i$ at time $t$
+          (i.e., the number of layers in which node $i$ is active at
+          time $t$) while $A>0$ is an intrinsic attractiveness.
+
+          The file \textit{layer\_N\_file} reports on the n-th line
+          the number of active nodes on the n-th layer.
+          
+          The parameter \textit{N} is the number of nodes in the
+          multiplex, \textit{M0} is the number of layers in the
+          initial network, \textit{A} is the value of
+          node attractiveness.
+
+          If the user specifies \texttt{RND} as the last parameter,
+          the sequence of layers is }
+
+\myreturn{The program prints on \texttt{stdout} a node-layer list of lines in the
+ format:
+
+ \hspace{0.5cm} \textit{node\_i layer\_i}
+ 
+ where \textit{node\_i} is the ID of a node and \textit{layre\_i} is
+ the ID of a layer. This list indicates which nodes are active in
+ which layer. For instance, the line:
+
+ \hspace{0.5cm} \textit{24 3}
+
+ indicates that the node with ID \textit{24} is active on
+ layer \textit{3}.
+}
+
+\myreference{\refcorrelations}

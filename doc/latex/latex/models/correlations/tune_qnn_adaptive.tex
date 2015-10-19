@@ -1,0 +1,64 @@
+\myprogram{{tune\_qnn\_adaptive}}
+          {Construct a multiplex with prescribed inter-layer correlations.} 
+          {$<$degs1$>$  $<$degs2$>$ $<$mu$>$ $<$eps$>$ $<$beta$>$ [RND|NAT|INV]}
+
+\mydescription{This programs tunes the inter-layer degree correlation
+          exponent $\mu$. If we consider two layers of a multiplex,
+          and we denote by $k$ the degree of a node on the first layer
+          and by $q$ the degree of the same node on the second layers,
+          the inter-layer degree correlation function is defined as:
+          
+          \begin{equation*}
+            \overline{q}(k) = \sum_{q'} q' P(q'|k)
+          \end{equation*}
+
+           where $\overline{q}(k)$ is the average degree on layer $2$
+           of nodes having degree $k$ on layer $1$. 
+
+           The program assumes that we want to set the degree
+           correlation function such that:
+
+           \begin{equation*}
+           \overline{q}(k) = a k^{\mu}
+           \end{equation*}
+           
+           where the exponent of the power-law function is given by
+           the user (it is indeed the parameter \textit{mu}), and
+           successively adjusts the pairing between nodes at the two
+           layers in order to obtain a correlation function as close
+           as possible to the desired one. The files \textit{degs1}
+           and \textit{degs2} contain, respectively, the degrees of
+           the nodes on the first layer and on the second layer. 
+           
+           The parameter \textit{eps} is the accuracy of \textit{mu}.
+           For instance, if \textit{mu} is set equal to -0.25
+           and \textit{eps} is equal to 0.0001, the program stops when
+           the configuration of node pairing corresponds to a value of
+           the exponent $\mu$ which differs from -0.25 by less than
+           0.0001.
+
+          The parameter \textit{beta} is the typical inverse
+          temperature of simulated annealing.
+
+          If no other parameter is specified, or if the last parameter
+          is \texttt{RND}, the program starts from a random pairing of
+          nodes. If the last parameter is \texttt{NAT} then the
+          program assumes that the initial pairing is the natural one,
+          where the nodes have the same ID on both layers. Finally,
+          if \texttt{INV} is specified, the initial pairing is the
+          inverse pairing, i.e. the one where node 0 on layer 1 is
+          paired with node N-1 on layer 2, and so on.
+
+ }
+
+
+\myreturn{The program prints on \texttt{stdout} a pairing, i.e. a list
+of lines in the format:
+
+\hspace{0.5cm} \textit{IDL1 IDL2}
+
+where \textit{IDL1} is the ID of the node on layer 1 and \textit{IDL2}
+is the corresponding ID of the same node on layer 2.
+}
+
+\myreference{\refcorrelations}

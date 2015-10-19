@@ -1,0 +1,19 @@
+\myprogram{{rank\_nodes.py}}
+          {rank the nodes of a layer according to a given structural
+          descriptor.}  {$<$prop\_file$>$}
+
+\mydescription{Get a file as input, whose n-th line corresponds to the value of a
+ certain property of the n-th node, and rank the nodes according to
+ that property, taking into account ranking ties properly.
+ 
+ For example, if \textit{propfile} contains the degrees of the nodes
+ at a certain layer of the multiplex, the computes the ranking induced
+ by degrees, where the node with the highest degree will be assigned a
+ rank equal to \textbf{1} (one).
+}
+
+\myreturn{The program prints on \texttt{stdout} a list of lines, where
+ the n-th line contains the rank of the n-th node corresponding to the
+ values of the structural descriptor provided in the input file.}
+
+\myreference{\refcorrelations}

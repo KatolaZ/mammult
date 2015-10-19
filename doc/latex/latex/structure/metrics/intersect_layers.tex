@@ -1,0 +1,28 @@
+\myprogram{{intersect\_layers.py}}
+          {compute the intersection graph associated to a
+          multiplex.}  {$<$layer1$>$ $<$layer2$>$ [$<$layer3$>$...]}
+
+\mydescription{Compute and print on output the edge list of the  
+               intersection graph associated to the multiplex network
+               given on input, where an edge exists only if it is
+               present on \textbf{all} the layers of the multiplex.
+
+  Each input file contains the (undirected) edge list of a layer, and
+  each line is in the format:
+  
+  \hspace{0.5cm}\textit{src\_ID} \textit{dest\_ID}
+  
+  where \textit{src\_ID} and \textit{dest\_ID} are the IDs of the two
+  endpoints of an edge.}
+
+\myreturn{The program prints on \texttt{stdout} the edge list of the
+  intersection graph associated to the multiplex network. The edge
+  list is a list of lines in the format:
+   
+
+  \hspace{0.5cm} \textit{ID1 ID2}
+
+  \noindent where \textit{ID1} and \textit{ID2} are the IDs of the two
+  nodes.}
+
+\myreference{\refcorrelations}
