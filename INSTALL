@@ -1,0 +1,32 @@
+==== MAMMULT: Metrics And Models for MULTilayer networks ====
+
+Most of the programs included in this version of the MAMMULT
+package are in Python, thus no installation at all is needed.
+It is sufficient to copy the .py files in the desired directory
+and use them. 
+
+Python code requires the following packages to be installed in 
+your system:
+
+ SciPy
+ Numpy
+ Networkx
+
+All the code should work with any recent version of those packages.
+
+
+Makefiles are available for all C code in the corresponding 
+directories, namely:
+
+  structure/correlations/
+  models/correlations/
+  models/growth/
+  dynamics/ising/
+  dynamics/randomwalks/
+
+In order to compile C programs it is sufficient to move to the 
+corresponding directory and give the command:
+
+  $ make
+
+which will compile all the executables. 
