@@ -66,7 +66,10 @@ void tune_qnn_adaptive(double *R1, double *R2, int N, int *pairing, double eps,
   a = 1.0;
   
   F = 10000;
-  
+      
+  fit_current_trend(R1, R2, N, pairing, &mu, &a, &err);
+  fprintf(stderr, "Initial mu: %g a: %g corr: %g\n", mu, a, err);
+   
   //fprintf("%f %f %f %f %f\n", eps, beta, mu_target, act_mu, F);
   
   tot = 0;
@@ -143,7 +146,9 @@ void tune_qnn_adaptive(double *R1, double *R2, int N, int *pairing, double eps,
     fit_current_trend(R1, R2, N, pairing, &mu, &dummy_a, &err);
     F = fabs(mu - mu_target);
   }
-}
+  fit_current_trend(R1, R2, N, pairing, &mu, &a, &err);
+  fprintf(stderr, "Final mu: %g a: %g corr: %g\n", mu, a, err);
+ }
 
 void dump_qnn(double *R1, double *R2, int N, int *pairing){
   
